@@ -6,9 +6,11 @@ import React from "react";
 const Home = () => {
   const router = useRouter();
   return (
-    <>
-      <Button onClick={() => router.push("/news")}>News</Button>
-    </>
+    <div className="flex items-center justify-center h-screen">
+      <Button variant="contained" onClick={() => router.push("/news")}>
+        News
+      </Button>
+    </div>
   );
 };
 

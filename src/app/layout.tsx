@@ -4,6 +4,7 @@ import { PropsWithChildren } from "react";
 
 import Providers from "@/providers";
 import "./globals.css";
+import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
   title: "Nida",
@@ -23,11 +24,12 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en">
-      <body>
-        <Providers>
+      <Providers>
+        <body>
           <Box>{children}</Box>
-        </Providers>
-      </body>
+        </body>
+        <Footer />
+      </Providers>
     </html>
   );
 }
