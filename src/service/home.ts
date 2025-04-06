@@ -1,10 +1,11 @@
 import { endpoint } from '@/providers/service';
+import { ResponseDefault } from '@/types/default';
 import { HomeResponseObject } from '@/types/home';
 import axios from 'axios';
 
 export const fetchHome = async (): Promise<HomeResponseObject> => {
   try {
-    const { data } = await axios({
+    const { data } = await axios<ResponseDefault<HomeResponseObject>>({
       url: endpoint(`/home`),
       method: 'GET',
     });

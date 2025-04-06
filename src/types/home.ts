@@ -151,7 +151,3 @@ export interface HomeResponseObject {
   forum: Forum[];
   news: News[];
 }
-
-export interface FetchHomeResponse extends ResponseDefault {
-  responseObject: HomeResponseObject;
-}
