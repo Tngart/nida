@@ -1,10 +1,5 @@
-import Box from "@mui/material/Box";
 import type { Metadata, Viewport } from "next";
-import { PropsWithChildren } from "react";
-
-import Providers from "@/providers";
 import "./globals.css";
-import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
   title: "Nida",
@@ -21,15 +16,10 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-export default function RootLayout({ children }: PropsWithChildren) {
-  return (
-    <html lang="en">
-      <Providers>
-        <body>
-          <Box>{children}</Box>
-        </body>
-        <Footer />
-      </Providers>
-    </html>
-  );
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
 }

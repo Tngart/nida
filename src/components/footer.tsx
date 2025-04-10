@@ -2,7 +2,7 @@ import { Link, Typography } from "@mui/material";
 
 export default function Footer() {
   return (
-    <footer className="fixed-0 w-full">
+    <div className="fixed-0 w-full">
       <div className="flex flex-col md:flex-row items-center justify-between gap-6 px-16">
         <div className="text-center md:text-left">
           <Typography>E-learning Website publish by NIDA</Typography>
@@ -59,6 +59,6 @@ export default function Footer() {
           </Typography>
         </div>
       </div>
-    </footer>
+    </div>
   );
 }

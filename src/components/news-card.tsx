@@ -13,7 +13,7 @@ interface NewsProps {
 }
 const NewsCard: React.FC<NewsProps> = ({ data }) => {
   return (
-    <Card className="flex flex-col w-[300px] h-[350px]">
+    <Card className="flex flex-col w-full min-h-[350px]">
       <CardActionArea className="h-full">
         <Box className="flex flex-col h-full">
           <CardMedia
@@ -22,9 +22,6 @@ const NewsCard: React.FC<NewsProps> = ({ data }) => {
             image={data.imageUrl}
             alt={data.id.toString()}
             loading="lazy"
-            sx={{
-              height: "160px",
-            }}
           />
           <Chip
             className="absolute top-3 left-3 z-1"
