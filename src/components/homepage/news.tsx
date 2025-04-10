@@ -1,25 +1,30 @@
 import dynamic from 'next/dynamic';
-import React from 'react';
-import { mockNews } from './mock/news';
+import React, { FC } from 'react';
 import { Button, Typography } from '@mui/material';
 import { useTranslations } from 'next-intl';
+import { News } from '@/types/home';
 
 const NewsCard = dynamic(() => import('@/components/news-card'));
+interface NewsProps {
+  newsList: News[]
+}
 
-const NewsComponent = () => {
+const NewsComponent:FC<NewsProps> = ({newsList}) => {
   const t = useTranslations('Homepage.News');
   return (
-    <div className="flex flex-col items-center justify-center p-4">
+    <div className="flex flex-col items-center justify-center p-32 gap-8">
+      <div className="flex flex-col items-center justify-center gap-4">
       <Typography variant="h4" fontWeight={'bold'}>
         {t('title')}
       </Typography>
       <Typography variant="subtitle1">{t('subtitle')}</Typography>
+      </div>
       <div className="flex flex-col items-center justify-center gap-4 md:flex-row">
-        {mockNews.responseObject.news.map((data) => (
+        {newsList.map((data) => (
           <NewsCard key={data.id} data={data} />
         ))}
       </div>
-      <Button variant="contained" size="large">
+      <Button href="/news" variant="outlined" size="large">
         {t('button')}
       </Button>
     </div>

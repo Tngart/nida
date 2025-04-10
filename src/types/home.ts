@@ -1,3 +1,7 @@
+import { ResponseDefault } from "./default";
+import { AxiosPromise } from 'axios';
+
+
 interface ContinueInfo {
   chapterId: number;
   courseId: number;
@@ -143,14 +147,12 @@ export interface News {
   views: number;
 }
 
-interface ResponseObject {
+export interface HomeResponseObject {
   course: Course[];
   forum: Forum[];
   news: News[];
 }
 
-export interface ApiResponse {
-  code: number;
-  message: string;
-  responseObject: ResponseObject;
+export interface FetchHomeResponse extends ResponseDefault {
+  responseObject: HomeResponseObject;
 }

@@ -21,6 +21,7 @@
     "@mui/material": "^6.3.0",
     "@mui/material-nextjs": "^6.3.0",
     "@mui/x-date-pickers": "^7.23.3",
+    "axios": "^1.8.4",
     "dayjs": "^1.11.13",
     "deepmerge": "^4.3.1",
     "flag-icons": "^7.2.3",
