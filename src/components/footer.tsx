@@ -1,9 +1,9 @@
-import { Link, Typography } from "@mui/material";
+import { Link, Typography } from '@mui/material';
 
 export default function Footer() {
   return (
     <div className="fixed-0 w-full">
-      <div className="flex flex-col md:flex-row items-center justify-between gap-6 px-16">
+      <div className="flex flex-col items-center justify-between gap-6 px-16 md:flex-row">
         <div className="text-center md:text-left">
           <Typography>E-learning Website publish by NIDA</Typography>
           <Typography>Environment School | The National</Typography>
@@ -11,7 +11,7 @@ export default function Footer() {
         </div>
 
         <div className="text-center md:text-left">
-          <Typography variant="h6" fontWeight={"bold"}>
+          <Typography variant="h6" fontWeight={'bold'}>
             Contact
           </Typography>
           <div className="flex flex-row gap-2">
@@ -35,14 +35,14 @@ export default function Footer() {
         </div>
 
         <div className="text-center md:text-left">
-          <Typography variant="h6" fontWeight={"bold"}>
+          <Typography variant="h6" fontWeight={'bold'}>
             Download
           </Typography>
         </div>
       </div>
 
-      <div className="mt-8 border-t bg-[#adca31] flex flex-col md:flex-row justify-between items-center text-sm">
-        <div className="flex justify-between w-full p-4">
+      <div className="mt-8 flex flex-col items-center justify-between border-t bg-[#adca31] text-sm md:flex-row">
+        <div className="flex w-full justify-between p-4">
           <Typography variant="body2" color="white">
             © 2021 Nida Online Learning. All Rights Reserved.
           </Typography>

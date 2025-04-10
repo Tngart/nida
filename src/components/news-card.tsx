@@ -1,30 +1,24 @@
-"use client";
-import * as React from "react";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import CardActionArea from "@mui/material/CardActionArea";
-import { News } from "@/types/home";
-import { Box, Chip } from "@mui/material";
+'use client';
+import * as React from 'react';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import CardActionArea from '@mui/material/CardActionArea';
+import { News } from '@/types/home';
+import { Box, Chip } from '@mui/material';
 
 interface NewsProps {
   data: News;
 }
 const NewsCard: React.FC<NewsProps> = ({ data }) => {
   return (
-    <Card className="flex flex-col w-full min-h-[350px]">
+    <Card className="flex min-h-[350px] w-full flex-col">
       <CardActionArea className="h-full">
-        <Box className="flex flex-col h-full">
-          <CardMedia
-            component="img"
-            width={"100%"}
-            image={data.imageUrl}
-            alt={data.id.toString()}
-            loading="lazy"
-          />
+        <Box className="flex h-full flex-col">
+          <CardMedia component="img" width={'100%'} image={data.imageUrl} alt={data.id.toString()} loading="lazy" />
           <Chip
-            className="absolute top-3 left-3 z-1"
+            className="z-1 absolute left-3 top-3"
             label={
               <Typography variant="body2" component="span">
                 {data.topicType.name}
@@ -36,20 +30,12 @@ const NewsCard: React.FC<NewsProps> = ({ data }) => {
               bgcolor: theme.palette.background.default,
             })}
           />
-          <CardContent className="flex flex-col justify-between h-full">
+          <CardContent className="flex h-full flex-col justify-between">
             <div className="flex flex-col gap-2">
-              <Typography
-                className="line-clamp-2 overflow-hidden"
-                variant="subtitle1"
-                fontWeight={"bold"}
-              >
+              <Typography className="line-clamp-2 overflow-hidden" variant="subtitle1" fontWeight={'bold'}>
                 {data.title}
               </Typography>
-              <Typography
-                className="line-clamp-3 overflow-hidden"
-                variant="body2"
-                color="text.secondary"
-              >
+              <Typography className="line-clamp-3 overflow-hidden" variant="body2" color="text.secondary">
                 {data.description}
               </Typography>
             </div>
