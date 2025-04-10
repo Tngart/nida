@@ -1,5 +1,4 @@
 export interface ResponseDefault {
-    code: number;
-    message: string;
-  }
-  
+  code: number;
+  message: string;
+}

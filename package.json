@@ -24,7 +24,7 @@
     "axios": "^1.8.4",
     "dayjs": "^1.11.13",
     "deepmerge": "^4.3.1",
-    "flag-icons": "^7.2.3",
+    "flag-icons": "^7.3.2",
     "libphonenumber-js": "^1.11.17",
     "mui-one-time-password-input": "^3.0.2",
     "next": "^15.1.2",

@@ -88,15 +88,19 @@ const theme = createTheme({
   },
   components: {
     MuiAppBar: {
+      defaultProps: {
+        elevation: 1,
+      },
       styleOverrides: {
         root: ({ theme }) => ({
+          borderRadius: '1.25rem',
           background: `${theme.vars.palette.background.default} !important`,
-          borderRadius: '0',
-          boxShadow: 'none',
           color: `${theme.vars.palette.primary.main} !important`,
-          height: '59px',
-          position: 'sticky',
-          top: 0,
+          position: 'fixed',
+          width: '80%',
+          top: 30,
+          left: '50%',
+          transform: 'translateX(-50%)',
         }),
       },
     },

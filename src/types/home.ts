@@ -1,6 +1,5 @@
-import { ResponseDefault } from "./default";
+import { ResponseDefault } from './default';
 import { AxiosPromise } from 'axios';
-
 
 interface ContinueInfo {
   chapterId: number;

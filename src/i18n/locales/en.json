@@ -1,0 +1,26 @@
+{
+  "AppBar": {
+    "Action": {
+      "register": "Register",
+      "login": "Login"
+    },
+    "Locales": {
+      "en": "English",
+      "th": "ภาษาไทย"
+    },
+    "Menu": {
+      "home": "Home",
+      "exploreCourses": "Explore Courses",
+      "forum": "Forum",
+      "news": "News",
+      "faq": "FAQ"
+    }
+  },
+  "Homepage": {
+    "News": {
+      "title": "Latest Updates and News",
+      "subtitle": "Don’t miss updated news , follow us!",
+      "button": "See all news"
+    }
+  }
+}
