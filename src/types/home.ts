@@ -22,7 +22,7 @@ interface Trainer {
   title: string;
 }
 
-interface Course {
+export interface Course {
   allAccess: boolean;
   avgRating: number;
   category: NameID;
@@ -101,7 +101,7 @@ interface Reply {
   totalReply: number;
 }
 
-interface Forum {
+export interface Forum {
   id: number;
   allAccess: boolean;
   canDelete: boolean;

@@ -20,6 +20,7 @@
     "prettier-plugin-tailwindcss": "^0.6.11",
     "react": "^18",
     "react-dom": "^18",
+    "swiper": "^11.2.6",
     "typescript-eslint": "^8.30.1"
   },
   "devDependencies": {

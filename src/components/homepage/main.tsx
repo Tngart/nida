@@ -14,7 +14,7 @@ const Main = () => {
         <Typography variant="subtitle2" fontWeight={'medium'} color="text.primary">
           {t('description')}
         </Typography>
-        <Button variant="contained" color="primary" endIcon={<ArrowForward />} sx={{ width: '120px' }}>
+        <Button variant="contained" color="primary" endIcon={<ArrowForward />} sx={{ width: '130px' }} href="/explore">
           <Typography variant="body1" fontWeight={'bold'}>
             {t('button')}
           </Typography>

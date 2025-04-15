@@ -64,100 +64,106 @@ const CustomAppBar = () => {
   return (
     <AppBar>
       <Toolbar className="flex flex-row justify-between">
-        <Box className="flex flex-row items-center gap-4">
-          <Image src="/logo.png" alt="logo" width={150} height={150} />
-        </Box>
-        {isLgSize ? (
-          <>
-            <Menu anchorEl={menuAnchorEl} open={isLgSizeMenuOpen} onClose={handleMobileMenuClose}>
-              <MenuItem component={Link} href="/" onClick={handleMobileMenuClose} selected={isSelected()}>
-                {t('Menu.home')}
-              </MenuItem>
-              <MenuItem
-                component={Link}
-                href="/explore"
-                onClick={handleMobileMenuClose}
-                selected={isSelected('explore')}
-              >
-                {t('Menu.exploreCourses')}
-              </MenuItem>
-              <MenuItem component={Link} href="/forum" onClick={handleMobileMenuClose} selected={isSelected('forum')}>
-                {t('Menu.forum')}
-              </MenuItem>
-              <MenuItem component={Link} href="/news" onClick={handleMobileMenuClose} selected={isSelected('news')}>
-                {t('Menu.news')}
-              </MenuItem>
-              <MenuItem component={Link} href="/faq" onClick={handleMobileMenuClose} selected={isSelected('faq')}>
-                {t('Menu.faq')}
-              </MenuItem>
-              <Divider />
-              <div className="flex flex-row justify-center gap-4">
-                <span
-                  className={`fi fi-th cursor-pointer text-xl ${locale === 'th' ? '' : 'opacity-20'}`}
-                  onClick={() => handleChangeLocale('th')}
-                />
-                <span
-                  className={`fi fi-gb cursor-pointer text-xl ${locale === 'en' ? '' : 'opacity-20'}`}
-                  onClick={() => handleChangeLocale('en')}
-                />
-              </div>
-            </Menu>
-          </>
-        ) : (
-          <Box className="flex flex-row items-center gap-8">
-            <Link href="/">
-              <Typography variant="subtitle2" fontWeight="bold" color={color()}>
-                {t('Menu.home')}
-              </Typography>
-            </Link>
-            <Link href="/explore">
-              <Typography variant="subtitle2" fontWeight="bold" color={color('explore')}>
-                {t('Menu.exploreCourses')}
-              </Typography>
-            </Link>
-            <Link href="/forum">
-              <Typography variant="subtitle2" fontWeight="bold" color={color('forum')}>
-                {t('Menu.forum')}
-              </Typography>
-            </Link>
-            <Link href="/news">
-              <Typography variant="subtitle2" fontWeight="bold" color={color('news')}>
-                {t('Menu.news')}
-              </Typography>
-            </Link>
-            <Link href="/faq">
-              <Typography variant="subtitle2" fontWeight="bold" color={color('faq')}>
-                {t('Menu.faq')}
-              </Typography>
-            </Link>
-            <Typography variant="subtitle2" color="text.secondary">
-              v 1.5.25
-            </Typography>
-            <IconButton onClick={handleLangClick} onMouseEnter={handleLangClick}>
-              <span className={`fi fi-${currentLocaleIcons}`} />
-            </IconButton>
-            <Menu anchorEl={langAnchorEl} open={Boolean(langAnchorEl)} onClose={handleLangClose}>
-              <div className="flex flex-row justify-center gap-3 px-4">
-                <span
-                  className={`fi fi-th cursor-pointer text-xl ${locale === 'th' ? '' : 'opacity-20'}`}
-                  onClick={() => handleChangeLocale('th')}
-                />
-                <span
-                  className={`fi fi-gb cursor-pointer text-xl ${locale === 'en' ? '' : 'opacity-20'}`}
-                  onClick={() => handleChangeLocale('en')}
-                />
-              </div>
-            </Menu>
+        <div className="flex flex-row items-center gap-4">
+          <Box className="flex cursor-pointer flex-row items-center gap-4" onClick={() => router.push('/')}>
+            <Image src="/logo.png" alt="logo" width={150} height={150} />
           </Box>
-        )}
+          {isLgSize ? (
+            <>
+              <Menu anchorEl={menuAnchorEl} open={isLgSizeMenuOpen} onClose={handleMobileMenuClose}>
+                <MenuItem component={Link} href="/" onClick={handleMobileMenuClose} selected={isSelected()}>
+                  {t('Menu.home')}
+                </MenuItem>
+                <MenuItem
+                  component={Link}
+                  href="/explore"
+                  onClick={handleMobileMenuClose}
+                  selected={isSelected('explore')}
+                >
+                  {t('Menu.exploreCourses')}
+                </MenuItem>
+                <MenuItem component={Link} href="/forum" onClick={handleMobileMenuClose} selected={isSelected('forum')}>
+                  {t('Menu.forum')}
+                </MenuItem>
+                <MenuItem component={Link} href="/news" onClick={handleMobileMenuClose} selected={isSelected('news')}>
+                  {t('Menu.news')}
+                </MenuItem>
+                <MenuItem component={Link} href="/faq" onClick={handleMobileMenuClose} selected={isSelected('faq')}>
+                  {t('Menu.faq')}
+                </MenuItem>
+                <Divider />
+                <div className="flex flex-row justify-center gap-4">
+                  <span
+                    className={`fi fi-th cursor-pointer text-xl ${locale === 'th' ? '' : 'opacity-20'}`}
+                    onClick={() => handleChangeLocale('th')}
+                  />
+                  <span
+                    className={`fi fi-gb cursor-pointer text-xl ${locale === 'en' ? '' : 'opacity-20'}`}
+                    onClick={() => handleChangeLocale('en')}
+                  />
+                </div>
+              </Menu>
+            </>
+          ) : (
+            <Box className="flex flex-row items-center gap-8">
+              <Link href="/">
+                <Typography variant="subtitle2" fontWeight="bold" color={color()}>
+                  {t('Menu.home')}
+                </Typography>
+              </Link>
+              <Link href="/explore">
+                <Typography variant="subtitle2" fontWeight="bold" color={color('explore')}>
+                  {t('Menu.exploreCourses')}
+                </Typography>
+              </Link>
+              <Link href="/forum">
+                <Typography variant="subtitle2" fontWeight="bold" color={color('forum')}>
+                  {t('Menu.forum')}
+                </Typography>
+              </Link>
+              <Link href="/news">
+                <Typography variant="subtitle2" fontWeight="bold" color={color('news')}>
+                  {t('Menu.news')}
+                </Typography>
+              </Link>
+              <Link href="/faq">
+                <Typography variant="subtitle2" fontWeight="bold" color={color('faq')}>
+                  {t('Menu.faq')}
+                </Typography>
+              </Link>
+              <Typography variant="subtitle2" color="text.secondary">
+                v 1.5.25
+              </Typography>
+            </Box>
+          )}
+        </div>
         <div className="flex flex-row items-center gap-2">
           {isLgSize && (
             <IconButton color="default" onClick={handleMobileMenuOpen} onMouseEnter={handleMobileMenuOpen}>
               <MenuIcon />
             </IconButton>
           )}
-          <Button>{t('Action.register')}</Button>
-          <Button variant="contained" endIcon={<ArrowForwardIcon />}>
+          {!isLgSize && (
+            <>
+              <IconButton onClick={handleLangClick} onMouseEnter={handleLangClick}>
+                <span className={`fi fi-${currentLocaleIcons}`} />
+              </IconButton>
+              <Menu anchorEl={langAnchorEl} open={Boolean(langAnchorEl)} onClose={handleLangClose}>
+                <div className="flex flex-row justify-center gap-3 px-4">
+                  <span
+                    className={`fi fi-th cursor-pointer text-xl ${locale === 'th' ? '' : 'opacity-20'}`}
+                    onClick={() => handleChangeLocale('th')}
+                  />
+                  <span
+                    className={`fi fi-gb cursor-pointer text-xl ${locale === 'en' ? '' : 'opacity-20'}`}
+                    onClick={() => handleChangeLocale('en')}
+                  />
+                </div>
+              </Menu>
+            </>
+          )}
+          <Button href="/register">{t('Action.register')}</Button>
+          <Button variant="contained" endIcon={<ArrowForwardIcon />} href="/login">
             {t('Action.login')}
           </Button>
         </div>

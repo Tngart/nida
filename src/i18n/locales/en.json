@@ -27,6 +27,10 @@
       "subtitle": "Don’t miss updated news , follow us!",
       "button": "See all news"
     },
+    "Recommend": {
+      "title": "Recommended Courses",
+      "button": "Explore Course"
+    },
     "Registration": {
       "title": "Free Registration",
       "description": "Online Lesson, news, forums are available",

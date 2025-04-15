@@ -233,6 +233,13 @@ const muiTheme = createTheme({
         }),
       },
     },
+    MuiRating: {
+      styleOverrides: {
+        iconEmpty: {
+          color: '#888888',
+        },
+      },
+    },
     MuiSelect: {
       styleOverrides: {
         root: ({ theme }) => ({

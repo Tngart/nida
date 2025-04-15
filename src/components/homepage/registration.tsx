@@ -13,7 +13,7 @@ const Registration = () => {
       <Typography variant="body1" fontWeight={'medium'} color="primary.contrastText">
         {t('description')}
       </Typography>
-      <Button variant="contained" color="info" endIcon={<ArrowForward />}>
+      <Button variant="contained" color="info" endIcon={<ArrowForward />} href="/register">
         <Typography variant="body1" fontWeight={'bold'}>
           {t('button')}
         </Typography>
