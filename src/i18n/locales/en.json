@@ -17,6 +17,11 @@
     }
   },
   "Homepage": {
+    "Main": {
+      "title": "We Enter to Learn\nLeave to Achieve",
+      "description": "E-learning Website publish by NIDA Environment School \n The National Institute of Development Administration",
+      "button": "Get started"
+    },
     "News": {
       "title": "Latest Updates and News",
       "subtitle": "Don’t miss updated news , follow us!",

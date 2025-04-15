@@ -3,7 +3,7 @@ import { Link, Typography } from '@mui/material';
 export default function Footer() {
   return (
     <div className="fixed-0 w-full">
-      <div className="flex flex-col items-center justify-between gap-6 px-40 md:flex-row">
+      <div className="flex flex-col items-center justify-between gap-6 px-48 md:flex-row">
         <div className="text-center md:text-left">
           <Typography>E-learning Website publish by NIDA</Typography>
           <Typography>Environment School | The National</Typography>

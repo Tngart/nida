@@ -39,7 +39,7 @@ const muiTheme = createTheme({
       contrastText: 'rgba(255, 255, 255, 1)',
     },
     text: {
-      primary: 'rgba(0, 0, 0, 1)',
+      primary: 'rgba(61, 61, 61, 1)',
       secondary: 'rgba(0, 0, 0, 0.475)',
       disabled: 'rgba(0, 0, 0, 0.38)',
     },
@@ -55,7 +55,7 @@ const muiTheme = createTheme({
           background: `${theme.vars.palette.background.default} !important`,
           color: `${theme.vars.palette.primary.main} !important`,
           position: 'fixed',
-          width: 'calc(100% - 20rem)',
+          width: 'calc(100% - 24rem)',
           top: 30,
           left: '50%',
           transform: 'translateX(-50%)',
@@ -261,6 +261,13 @@ const muiTheme = createTheme({
         root: { paddingLeft: '1.5rem', paddingRight: '1.5rem' },
       },
     },
+    MuiTypography: {
+      styleOverrides: {
+        root: {
+          whiteSpace: 'pre-line',
+        },
+      },
+    },
   },
   typography: {
     fontFamily: notoSans.style.fontFamily,
@@ -268,6 +275,10 @@ const muiTheme = createTheme({
     fontWeightMedium: 500,
     fontWeightRegular: 400,
     fontWeightLight: 300,
+    h1: { fontSize: '6rem' },
+    h2: { fontSize: '3.75rem' },
+    h3: { fontSize: '2.75rem' },
+    h4: { fontSize: '2rem' },
     h5: { fontSize: '1.5rem' },
     h6: { fontSize: '1.25rem' },
     subtitle1: { fontSize: '1rem' },
