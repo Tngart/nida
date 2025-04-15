@@ -37,12 +37,12 @@ const CustomAppBar = () => {
 
   return (
     <AppBar>
-      <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
+      <Toolbar className="flex flex-row justify-between">
         <Box className="flex flex-row items-center gap-4">
           <Box>
             <Image src="/logo.png" alt="logo" width={150} height={150} />
           </Box>
-          <Box className="flex flex-row items-center gap-4">
+          <Box className="flex flex-row items-center gap-8">
             <Link href="/">
               <Typography variant="subtitle2" fontWeight={'bold'} color={color()}>
                 {t('Menu.home')}

@@ -5,85 +5,43 @@ import { Noto_Sans_Thai } from 'next/font/google';
 import { useEffect, useState } from 'react';
 
 const notoSans = Noto_Sans_Thai({ subsets: ['latin', 'thai'] });
-const theme = createTheme({
+const muiTheme = createTheme({
   cssVariables: {
     colorSchemeSelector: 'class',
   },
-  colorSchemes: {
-    light: {
-      palette: {
-        action: {
-          active: 'rgba(0, 0, 0, 0.6)',
-          disabled: 'rgba(255, 255, 255, 1)',
-        },
-        primary: {
-          main: 'rgba(173, 202, 49, 1)',
-          contrastText: 'rgba(255, 255, 255, 1)',
-        },
-        secondary: {
-          main: 'rgba(0, 0, 0, 0.082)',
-          contrastText: 'rgba(0, 0, 0, 0.475)',
-        },
-        success: {
-          main: 'rgba(18, 158, 57, 1)',
-          contrastText: 'rgba(18, 158, 57, 1)',
-        },
-        info: {
-          main: 'rgba(0, 0, 255, 0.6)',
-          contrastText: 'rgba(255, 255, 255, 1)',
-        },
-        warning: {
-          main: 'rgba(255, 152, 0, 1)',
-          contrastText: 'rgba(0, 0, 0, 1)',
-        },
-        error: {
-          main: 'rgba(227, 45, 45, 1)',
-          contrastText: 'rgba(255, 255, 255, 1)',
-        },
-        text: {
-          primary: 'rgba(0, 0, 0, 1)',
-          secondary: 'rgba(0, 0, 0, 0.475)',
-          disabled: 'rgba(0, 0, 0, 0.38)',
-        },
-      },
+  palette: {
+    action: {
+      active: 'rgba(0, 0, 0, 0.6)',
+      disabled: 'rgba(255, 255, 255, 1)',
     },
-    dark: {
-      palette: {
-        action: {
-          active: 'rgba(255, 255, 255, 0.6)',
-          disabled: 'rgba(0, 0, 0, 1)',
-        },
-        background: { paper: 'rgba(29, 29, 29, 1)' },
-        primary: {
-          main: 'rgba(0 ,226, 0, 1)',
-          contrastText: 'rgba(255, 255, 255, 1)',
-        },
-        secondary: {
-          main: 'rgba(255, 255, 255, 0.082)',
-          contrastText: 'rgba(134, 134, 134, 1)',
-        },
-        success: {
-          main: 'rgba(18, 158, 57, 1)',
-          contrastText: 'rgba(18, 158, 57, 1)',
-        },
-        info: {
-          main: 'rgba(0, 0, 255, 0.6)',
-          contrastText: 'rgba(255, 255, 255, 1)',
-        },
-        warning: {
-          main: 'rgba(255, 152, 0, 1)',
-          contrastText: 'rgba(0, 0, 0, 1)',
-        },
-        error: {
-          main: 'rgba(227, 45, 45, 1)',
-          contrastText: 'rgba(255, 255, 255, 1)',
-        },
-        text: {
-          primary: 'rgba(255, 255, 255, 0.96)',
-          secondary: 'rgba(255, 255, 255, 0.475)',
-          disabled: 'rgba(255, 255, 255, 0.38)',
-        },
-      },
+    primary: {
+      main: 'rgba(173, 202, 49, 1)',
+      contrastText: 'rgba(255, 255, 255, 1)',
+    },
+    secondary: {
+      main: 'rgba(0, 0, 0, 0.082)',
+      contrastText: 'rgba(0, 0, 0, 0.475)',
+    },
+    success: {
+      main: 'rgba(18, 158, 57, 1)',
+      contrastText: 'rgba(18, 158, 57, 1)',
+    },
+    info: {
+      main: 'rgba(255, 255, 255, 1)',
+      contrastText: 'rgba(0, 0, 0, 1)',
+    },
+    warning: {
+      main: 'rgba(255, 152, 0, 1)',
+      contrastText: 'rgba(0, 0, 0, 1)',
+    },
+    error: {
+      main: 'rgba(227, 45, 45, 1)',
+      contrastText: 'rgba(255, 255, 255, 1)',
+    },
+    text: {
+      primary: 'rgba(0, 0, 0, 1)',
+      secondary: 'rgba(0, 0, 0, 0.475)',
+      disabled: 'rgba(0, 0, 0, 0.38)',
     },
   },
   components: {
@@ -157,6 +115,14 @@ const theme = createTheme({
           '--primary-contrastText': theme.palette.primary.contrastText,
           '--secondary-main': theme.palette.secondary.main,
           '--secondary-contrastText': theme.palette.secondary.contrastText,
+          '--success-main': theme.palette.success.main,
+          '--success-contrastText': theme.palette.success.contrastText,
+          '--info-main': theme.palette.info.main,
+          '--info-contrastText': theme.palette.info.contrastText,
+          '--warning-main': theme.palette.warning.main,
+          '--warning-contrastText': theme.palette.warning.contrastText,
+          '--error-main': theme.palette.error.main,
+          '--error-contrastText': theme.palette.error.contrastText,
           '--text-primary': theme.palette.text.primary,
           '--text-secondary': theme.palette.text.secondary,
           '--text-disabled': theme.palette.text.disabled,
@@ -322,7 +288,7 @@ export default function ThemeProvider({ children }: Readonly<{ children: React.R
   if (!mounted) return null;
 
   return (
-    <MuiThemeProvider theme={theme}>
+    <MuiThemeProvider theme={muiTheme}>
       <CssBaseline />
       {children}
     </MuiThemeProvider>

@@ -41,20 +41,20 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="mt-8 flex flex-col items-center justify-between border-t bg-[#adca31] text-sm md:flex-row">
+      <div className="bg-primary-main mt-8 flex flex-col items-center justify-between border-t text-sm md:flex-row">
         <div className="flex w-full justify-between p-4">
-          <Typography variant="body2" color="white">
+          <Typography variant="body2" color="primary.contrastText">
             © 2021 Nida Online Learning. All Rights Reserved.
           </Typography>
           <div className="flex gap-4">
-            <Link underline="hover" href="#" color="white">
+            <Link underline="hover" href="#" color="primary.contrastText">
               Privacy Policy
             </Link>
-            <Link underline="hover" href="#" color="white">
+            <Link underline="hover" href="#" color="primary.contrastText">
               Terms Of Service
             </Link>
           </div>
-          <Typography variant="body2" color="white">
+          <Typography variant="body2" color="primary.contrastText">
             v 1.5.25
           </Typography>
         </div>

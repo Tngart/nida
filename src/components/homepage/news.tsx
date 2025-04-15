@@ -12,7 +12,7 @@ interface NewsProps {
 const NewsComponent: FC<NewsProps> = ({ newsList }) => {
   const t = useTranslations('Homepage.News');
   return (
-    <div className="flex flex-col items-center justify-center gap-8 p-40">
+    <>
       <div className="flex flex-col items-center justify-center gap-4">
         <Typography variant="h4" fontWeight={'bold'}>
           {t('title')}
@@ -27,7 +27,7 @@ const NewsComponent: FC<NewsProps> = ({ newsList }) => {
       <Button href="/news" variant="outlined" size="large">
         {t('button')}
       </Button>
-    </div>
+    </>
   );
 };
 
