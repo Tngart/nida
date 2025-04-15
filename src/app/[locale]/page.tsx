@@ -11,7 +11,7 @@ const HomePage = async () => {
   return (
     <div>
       <Main />
-      <div className="flex flex-col items-center justify-center gap-8 px-48 py-12">
+      <div className="flex flex-col items-center justify-center gap-8 px-4 py-12 md:px-48">
         <NewsComponent newsList={newsList.news} />
         <FreeRegistration />
       </div>

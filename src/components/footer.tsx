@@ -1,27 +1,30 @@
+import { Android, Apple } from '@mui/icons-material';
 import { Link, Typography } from '@mui/material';
+import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 
 export default function Footer() {
+  const t = useTranslations('Footer');
   return (
     <div className="fixed-0 w-full">
-      <div className="flex flex-col items-center justify-between gap-6 px-48 md:flex-row">
-        <div className="text-center md:text-left">
-          <Typography>E-learning Website publish by NIDA</Typography>
-          <Typography>Environment School | The National</Typography>
-          <Typography>Institute of Development Administration</Typography>
+      <div className="flex flex-col items-start justify-between gap-6 px-4 md:flex-row md:px-48">
+        <div className="text-start md:text-left">
+          <Image src="/logo.png" alt="logo" width={150} height={150} />
+          <Typography>{t('description')}</Typography>
         </div>
 
-        <div className="text-center md:text-left">
-          <Typography variant="h6" fontWeight={'bold'}>
-            Contact
+        <div className="text-start md:text-left">
+          <Typography variant="subtitle1" fontWeight={'bold'}>
+            {t('contact.title')}
           </Typography>
           <div className="flex flex-row gap-2">
-            <Typography>Email:</Typography>
+            <Typography>{t('contact.email')}</Typography>
             <Link underline="always" href="#">
               gseda@nida.ac.th
             </Link>
           </div>
           <div className="flex flex-row gap-2">
-            <Typography>Phone:</Typography>
+            <Typography>{t('contact.phone')}</Typography>
             <Link underline="always" href="#">
               02-727-3130
             </Link>
@@ -34,10 +37,18 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="text-center md:text-left">
-          <Typography variant="h6" fontWeight={'bold'}>
-            Download
+        <div className="text-start md:text-left">
+          <Typography variant="subtitle1" fontWeight={'bold'}>
+            {t('download')}
           </Typography>
+          <div className="flex flex-row items-end gap-3">
+            <Android color="primary" />
+            <Typography>Google Play Store</Typography>
+          </div>
+          <div className="flex flex-row items-end gap-3">
+            <Apple color="primary" />
+            <Typography>App Store</Typography>
+          </div>
         </div>
       </div>
 

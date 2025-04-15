@@ -55,10 +55,13 @@ const muiTheme = createTheme({
           background: `${theme.vars.palette.background.default} !important`,
           color: `${theme.vars.palette.primary.main} !important`,
           position: 'fixed',
-          width: 'calc(100% - 24rem)',
+          width: 'calc(100% - 2rem)',
           top: 30,
           left: '50%',
           transform: 'translateX(-50%)',
+          [theme.breakpoints.up('md')]: {
+            width: 'calc(100% - 24rem)',
+          },
         }),
       },
     },
@@ -286,6 +289,15 @@ const muiTheme = createTheme({
     body1: { fontSize: '0.75rem' },
     body2: { fontSize: '0.625rem' },
     caption: { fontSize: '0.625rem' },
+  },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 640,
+      md: 768,
+      lg: 1335,
+      xl: 1536,
+    },
   },
 });
 

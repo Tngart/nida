@@ -13,14 +13,15 @@ interface NewsProps {
 }
 const NewsCard: React.FC<NewsProps> = ({ data }) => {
   return (
-    <Card className="flex min-h-[360px] w-full flex-col">
-      <CardActionArea>
+    <CardActionArea>
+      <Card className="flex min-h-[360px] w-full flex-col">
         <Box className="flex h-full flex-col">
           <div className="p-4">
             <CardMedia
               sx={{ borderRadius: '1rem' }}
               component="img"
               width={'100%'}
+              height={'100%'}
               image={data.imageUrl}
               alt={data.id.toString()}
               loading="lazy"
@@ -53,8 +54,8 @@ const NewsCard: React.FC<NewsProps> = ({ data }) => {
             </Typography>
           </CardContent>
         </Box>
-      </CardActionArea>
-    </Card>
+      </Card>
+    </CardActionArea>
   );
 };
 

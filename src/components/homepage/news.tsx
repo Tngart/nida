@@ -19,7 +19,7 @@ const NewsComponent: FC<NewsProps> = ({ newsList }) => {
         </Typography>
         <Typography variant="subtitle1">{t('subtitle')}</Typography>
       </div>
-      <div className="flex flex-col items-center justify-center gap-4 md:flex-row">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
         {newsList.map((data) => (
           <NewsCard key={data.id} data={data} />
         ))}

@@ -32,5 +32,14 @@
       "description": "Online Lesson, news, forums are available",
       "button": "Register"
     }
+  },
+  "Footer": {
+    "description": "E-learning Website publish by NIDA\nEnvironment School | The National\nInstitute of Development Administration",
+    "contact": {
+      "title": "Contact",
+      "email": "Email : ",
+      "phone": "Phone : "
+    },
+    "download": "Download"
   }
 }

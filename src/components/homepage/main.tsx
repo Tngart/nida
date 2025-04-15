@@ -7,7 +7,7 @@ const Main = () => {
   const t = useTranslations('Homepage.Main');
   return (
     <div className="flex h-[600px] w-full flex-row items-center justify-center">
-      <Box className="flex w-[80%] flex-col gap-4 pl-48">
+      <Box className="flex w-[80%] flex-col gap-4 pl-4 md:pl-48">
         <Typography variant="h3" fontWeight={'bold'} color="text.primary">
           {t('title')}
         </Typography>
