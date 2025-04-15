@@ -4,7 +4,6 @@ import { routing } from '@/i18n/routing';
 import Footer from '@/components/footer';
 import Providers from '@/providers';
 import CustomAppBar from '@/components/app-bar';
-import { getTranslations } from 'next-intl/server';
 
 export default async function LocaleLayout({
   children,

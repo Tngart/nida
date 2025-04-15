@@ -97,7 +97,7 @@ const theme = createTheme({
           background: `${theme.vars.palette.background.default} !important`,
           color: `${theme.vars.palette.primary.main} !important`,
           position: 'fixed',
-          width: '80%',
+          width: 'calc(100% - 20rem)',
           top: 30,
           left: '50%',
           transform: 'translateX(-50%)',

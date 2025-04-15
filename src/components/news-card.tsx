@@ -14,7 +14,7 @@ interface NewsProps {
 const NewsCard: React.FC<NewsProps> = ({ data }) => {
   return (
     <Card className="flex min-h-[360px] w-full flex-col">
-      <CardActionArea className="h-full">
+      <CardActionArea>
         <Box className="flex h-full flex-col">
           <div className="p-4">
             <CardMedia

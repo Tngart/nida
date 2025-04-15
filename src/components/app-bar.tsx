@@ -6,6 +6,8 @@ import { useTranslations } from 'next-intl';
 import { AppBar, Toolbar, Button, Menu, MenuItem, Box, IconButton, Typography } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import 'flag-icons/css/flag-icons.min.css';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const CustomAppBar = () => {
   const t = useTranslations('AppBar');
@@ -14,6 +16,9 @@ const CustomAppBar = () => {
   const pathname = usePathname();
   const { locale } = useParams();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const currentLocaleIcons = locale === 'en' ? 'gb' : locale;
+  const firstPathname = pathname.split('/')[2];
+  const color = (path?: string) => (firstPathname === path ? 'primary' : 'text.secondary');
 
   const handleLangClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -33,40 +38,52 @@ const CustomAppBar = () => {
   return (
     <AppBar>
       <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
-        <Box display="flex" alignItems="center">
-          <Box ml={1}>
-            <Typography variant="body2" fontWeight="bold" sx={{ fontSize: '0.9rem' }}>
-              NIDA
-              <br />
-              ENVIRONMENT
-              <br />
-              SCHOOL
+        <Box className="flex flex-row items-center gap-4">
+          <Box>
+            <Image src="/logo.png" alt="logo" width={150} height={150} />
+          </Box>
+          <Box className="flex flex-row items-center gap-4">
+            <Link href="/">
+              <Typography variant="subtitle2" fontWeight={'bold'} color={color()}>
+                {t('Menu.home')}
+              </Typography>
+            </Link>
+            <Link href="/explore">
+              <Typography variant="subtitle2" fontWeight={'bold'} color={color('explore')}>
+                {t('Menu.exploreCourses')}
+              </Typography>
+            </Link>
+            <Link href="/forum">
+              <Typography variant="subtitle2" fontWeight={'bold'} color={color('forum')}>
+                {t('Menu.forum')}
+              </Typography>
+            </Link>
+            <Link href="/news">
+              <Typography variant="subtitle2" fontWeight={'bold'} color={color('news')}>
+                {t('Menu.news')}
+              </Typography>
+            </Link>
+            <Link href="/faq">
+              <Typography variant="subtitle2" fontWeight={'bold'} color={color('faq')}>
+                {t('Menu.faq')}
+              </Typography>
+            </Link>
+            <Typography variant="subtitle2" color="text.secondary">
+              v 1.5.25
             </Typography>
           </Box>
         </Box>
-
-        <Box display="flex" gap={3} alignItems="center">
-          <Button>{t('Menu.home')}</Button>
-          <Button>{t('Menu.exploreCourses')}</Button>
-          <Button>{t('Menu.forum')}</Button>
-          <Button>{t('Menu.news')}</Button>
-          <Button>{t('Menu.faq')}</Button>
-          <Typography variant="body2" sx={{ color: '#999' }}>
-            v 1.5.25
-          </Typography>
-        </Box>
-
         <Box display="flex" alignItems="center" gap={2}>
           <Box>
             <IconButton onClick={handleLangClick} onMouseEnter={handleLangClick}>
-              <span className={`fi fi-${locale}`} />
+              <span className={`fi fi-${currentLocaleIcons}`} />
             </IconButton>
             <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleLangClose}>
               <MenuItem onClick={() => handleChangeLocale('th')}>
                 <span className="fi fi-th mr-2" /> {t('Locales.th')}
               </MenuItem>
               <MenuItem onClick={() => handleChangeLocale('en')}>
-                <span className="fi fi-en mr-2" /> {t('Locales.en')}
+                <span className="fi fi-gb mr-2" /> {t('Locales.en')}
               </MenuItem>
             </Menu>
           </Box>
