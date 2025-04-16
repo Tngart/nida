@@ -16,6 +16,9 @@
       "faq": "FAQ"
     }
   },
+  "Empty": {
+    "description": "Not found"
+  },
   "Homepage": {
     "Main": {
       "title": "We Enter to Learn\nLeave to Achieve",
