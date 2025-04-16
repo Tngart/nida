@@ -37,6 +37,17 @@
       "button": "Register"
     }
   },
+  "News": {
+    "Filter": {
+      "title": "News",
+      "placeholder": "Search news",
+      "button": "Search"
+    },
+    "Content": {
+      "like": "Like",
+      "comment": "Comment"
+    }
+  },
   "Footer": {
     "description": "E-learning Website publish by NIDA\nEnvironment School | The National\nInstitute of Development Administration",
     "contact": {

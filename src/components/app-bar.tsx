@@ -66,7 +66,7 @@ const CustomAppBar = () => {
       <Toolbar className="flex flex-row justify-between">
         <div className="flex flex-row items-center gap-4">
           <Box className="flex cursor-pointer flex-row items-center gap-4" onClick={() => router.push('/')}>
-            <Image src="/logo.png" alt="logo" width={150} height={150} />
+            <Image src="/logo.png" alt="logo" width={140} height={140} />
           </Box>
           {isLgSize ? (
             <>
@@ -107,31 +107,31 @@ const CustomAppBar = () => {
           ) : (
             <Box className="flex flex-row items-center gap-8">
               <Link href="/">
-                <Typography variant="subtitle2" fontWeight="bold" color={color()}>
+                <Typography variant="body1" fontWeight="bold" color={color()}>
                   {t('Menu.home')}
                 </Typography>
               </Link>
               <Link href="/explore">
-                <Typography variant="subtitle2" fontWeight="bold" color={color('explore')}>
+                <Typography variant="body1" fontWeight="bold" color={color('explore')}>
                   {t('Menu.exploreCourses')}
                 </Typography>
               </Link>
               <Link href="/forum">
-                <Typography variant="subtitle2" fontWeight="bold" color={color('forum')}>
+                <Typography variant="body1" fontWeight="bold" color={color('forum')}>
                   {t('Menu.forum')}
                 </Typography>
               </Link>
               <Link href="/news">
-                <Typography variant="subtitle2" fontWeight="bold" color={color('news')}>
+                <Typography variant="body1" fontWeight="bold" color={color('news')}>
                   {t('Menu.news')}
                 </Typography>
               </Link>
               <Link href="/faq">
-                <Typography variant="subtitle2" fontWeight="bold" color={color('faq')}>
+                <Typography variant="body1" fontWeight="bold" color={color('faq')}>
                   {t('Menu.faq')}
                 </Typography>
               </Link>
-              <Typography variant="subtitle2" color="text.secondary">
+              <Typography variant="body2" color="text.primary">
                 v 1.5.25
               </Typography>
             </Box>

@@ -57,9 +57,10 @@ const muiTheme = createTheme({
           position: 'fixed',
           width: 'calc(100% - 2rem)',
           top: 30,
+          height: 48,
           left: '50%',
           transform: 'translateX(-50%)',
-          [theme.breakpoints.up('md')]: {
+          [theme.breakpoints.up('lg')]: {
             width: 'calc(100% - 24rem)',
           },
         }),
@@ -86,10 +87,10 @@ const muiTheme = createTheme({
       },
       styleOverrides: {
         root: {
-          borderRadius: '0.75rem',
+          borderRadius: '1rem',
           lineHeight: '2rem',
           textTransform: 'none',
-          height: '2.5rem',
+          height: '2rem',
         },
       },
     },
@@ -192,20 +193,22 @@ const muiTheme = createTheme({
     MuiInputBase: {
       styleOverrides: {
         root: ({ theme }) => ({
-          borderRadius: '0.75rem !important',
+          background: theme.palette.background.default,
+          borderRadius: '1rem !important',
           fontSize: theme.typography.subtitle2.fontSize,
           fontWeight: theme.typography.fontWeightRegular,
-          height: '3rem',
+          height: '2.75rem',
         }),
       },
     },
     MuiInput: {
       styleOverrides: {
         root: ({ theme }) => ({
-          borderRadius: '0.75rem !important',
+          background: theme.palette.background.default,
+          borderRadius: '1rem !important',
           fontSize: theme.typography.subtitle2.fontSize,
           fontWeight: theme.typography.fontWeightRegular,
-          height: '3rem',
+          height: '2.75rem',
         }),
       },
     },
@@ -229,7 +232,6 @@ const muiTheme = createTheme({
       styleOverrides: {
         root: ({ theme }) => ({
           borderRadius: '0.5rem',
-          borderColor: theme.palette.primary.main,
         }),
       },
     },
@@ -268,7 +270,12 @@ const muiTheme = createTheme({
     },
     MuiToolbar: {
       styleOverrides: {
-        root: { paddingLeft: '1.5rem', paddingRight: '1.5rem' },
+        root: {
+          minHeight: '48px !important',
+          '@media (min-width:600px)': {
+            minHeight: '48px !important',
+          },
+        },
       },
     },
     MuiTypography: {
