@@ -1,8 +1,5 @@
+import { CommentData } from './comment';
 import { ResponseDefault } from './default';
-
-export interface NewsResponseObject extends ResponseDefault {
-  responseObject: NewsResponse;
-}
 
 export interface NewsData {
   allAccess: boolean;
@@ -24,6 +21,15 @@ export interface NewsData {
   updateTime: string;
   views: number;
 }
+export interface NewsListResponse {
+  news: NewsData[];
+  total: number;
+}
+export interface NewsDetailResponse {
+  news: NewsData;
+  comments: CommentData[];
+  total: number;
+}
 
 export interface AttachType {
   id: number;
@@ -35,13 +41,31 @@ export interface TopicType {
   name: string;
 }
 
-export interface NewsResponse {
-  news: NewsData[];
-  total: number;
+export interface NewsFile {
+  id: number;
+  type: string;
+  fileSize: number;
+  isThumbnail: boolean;
+  originalFileName: string;
+  url: string;
+  orientation: string;
+  soundUrl: string;
 }
 
-export interface NewsPayload {
+export interface NewsListPayload {
   keyword?: string;
   offset: number;
   max: number;
+}
+
+export interface NewsDetailPayload {
+  offset: number;
+  max: number;
+}
+
+export interface NewsDetailResponseObject extends ResponseDefault {
+  responseObject: NewsDetailResponse;
+}
+export interface NewsListResponseObject extends ResponseDefault {
+  responseObject: NewsListResponse;
 }

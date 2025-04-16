@@ -10,6 +10,7 @@ interface IProps {
 const NewsCardComponent = dynamic(() => import('./card'));
 
 const Content: FC<IProps> = ({ newsList }) => {
+  console.log({ newsList });
   return (
     <div className="px-2 py-8 xl:px-72">
       <Paper elevation={4} className="flex flex-col gap-4 p-4">

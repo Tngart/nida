@@ -309,7 +309,7 @@ const muiTheme = createTheme({
       xs: 0,
       sm: 640,
       md: 768,
-      lg: 1335,
+      lg: 1280,
       xl: 1536,
     },
   },

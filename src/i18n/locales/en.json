@@ -45,7 +45,8 @@
     },
     "Content": {
       "like": "Like",
-      "comment": "Comment"
+      "comment": "Comment",
+      "back": "Back"
     }
   },
   "Footer": {

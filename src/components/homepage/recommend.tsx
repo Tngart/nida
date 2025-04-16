@@ -8,7 +8,7 @@ import 'swiper/css/navigation';
 import { Button, IconButton, LinearProgress, Typography } from '@mui/material';
 import { ArrowBack, ArrowForward } from '@mui/icons-material';
 import { Course } from '@/types/home';
-import CourseCard from '../course-card';
+import CourseCard from './course-card';
 import { useTranslations } from 'next-intl';
 
 interface IProps {

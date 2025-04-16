@@ -6,8 +6,8 @@ export const metadata: Metadata = {
   description: 'Nida',
   icons: {
     apple: '/apple-touch-icon.png',
-    icon: ['/favicon.ico', '/favicon.svg'],
-    shortcut: '/favicon.svg',
+    icon: ['/icon.png'],
+    shortcut: '/icon.png',
   },
 };
 

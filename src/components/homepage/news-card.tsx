@@ -13,7 +13,7 @@ interface NewsProps {
 }
 const NewsCard: React.FC<NewsProps> = ({ data }) => {
   return (
-    <CardActionArea>
+    <CardActionArea href={`/news/${data.id}`}>
       <Card className="flex min-h-[360px] w-full flex-col">
         <Box className="flex h-full flex-col">
           <div className="p-4">

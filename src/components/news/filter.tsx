@@ -6,13 +6,13 @@ import React from 'react';
 const FilterNewsComponent = () => {
   const t = useTranslations('News.Filter');
   return (
-    <div className="bg-[#1d1d21] px-48 py-[40px]">
-      <div className="flex flex-row justify-between pt-[80px]">
+    <div className="bg-[#1d1d21] px-4 py-[40px] xl:px-48">
+      <div className="flex flex-col justify-between pt-[80px] md:flex-row">
         <Typography variant="h4" fontWeight={'bold'} color="primary.contrastText">
           {t('title')}
         </Typography>
         <TextField
-          className="w-1/2"
+          className="w-full md:w-1/2"
           placeholder={t('placeholder')}
           variant="outlined"
           slotProps={{

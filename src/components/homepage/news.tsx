@@ -4,7 +4,7 @@ import { Button, Typography } from '@mui/material';
 import { useTranslations } from 'next-intl';
 import { News } from '@/types/home';
 
-const NewsCard = dynamic(() => import('@/components/news-card'));
+const NewsCard = dynamic(() => import('@/components/homepage/news-card'));
 interface NewsProps {
   newsList: News[];
 }

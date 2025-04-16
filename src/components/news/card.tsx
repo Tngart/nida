@@ -5,11 +5,13 @@ import {
   CalendarMonthOutlined,
   CampaignOutlined,
   MessageOutlined,
+  ThumbUpAlt,
   ThumbUpAltOutlined,
   VisibilityOutlined,
 } from '@mui/icons-material';
 import { Avatar, Button, Card, CardActionArea, CardActions, CardMedia, Divider, Typography } from '@mui/material';
 import React, { FC } from 'react';
+import { useTranslations } from 'next-intl';
 import { alpha } from '@mui/material/styles';
 
 interface IProps {
@@ -17,6 +19,7 @@ interface IProps {
 }
 
 const NewsCardComponent: FC<IProps> = ({ data }) => {
+  const t = useTranslations('News.Content');
   return (
     <Card variant="outlined">
       <CardActionArea href={`/news/${data.id}`}>
@@ -57,7 +60,7 @@ const NewsCardComponent: FC<IProps> = ({ data }) => {
           <Typography
             color="text.primary"
             sx={{ whiteSpace: 'normal' }}
-            className="line-clamp-5 overflow-hidden"
+            className={'line-clamp-5 overflow-hidden'}
             variant="body1"
           >
             {data.description}
@@ -70,15 +73,34 @@ const NewsCardComponent: FC<IProps> = ({ data }) => {
             alt={data.id.toString()}
             loading="lazy"
           />
+          <div className="flex flex-row justify-between">
+            <Button variant="text" color="inherit">
+              <Typography variant="body1" fontWeight={'bold'}>
+                <ThumbUpAltOutlined sx={{ fontSize: '14px', mr: 1 }} />
+                {data.likes}
+              </Typography>
+            </Button>
+            <Button variant="text" color="inherit">
+              <Typography variant="body1" fontWeight={'bold'}>
+                {data.comments} {t('comment')}
+              </Typography>
+            </Button>
+          </div>
         </div>
       </CardActionArea>
       <Divider />
       <CardActions sx={{ padding: 0 }}>
-        <Button fullWidth startIcon={<ThumbUpAltOutlined />} sx={{ borderRadius: 0, height: '40px' }}>
-          <Typography variant="body2">Like</Typography>
+        <Button
+          fullWidth
+          startIcon={data.isLiked ? <ThumbUpAlt /> : <ThumbUpAltOutlined />}
+          sx={{ borderRadius: 0, height: '40px' }}
+        >
+          <Typography variant="body2" fontWeight={data.isLiked ? 'bold' : 'normal'}>
+            {t('like')}
+          </Typography>
         </Button>
         <Button fullWidth startIcon={<MessageOutlined />} sx={{ borderRadius: 0, height: '40px' }}>
-          <Typography variant="body2">Comment</Typography>
+          <Typography variant="body2">{t('comment')}</Typography>
         </Button>
       </CardActions>
     </Card>
