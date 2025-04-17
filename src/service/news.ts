@@ -1,6 +1,7 @@
+import axios from 'axios';
+
 import { endpoint } from '@/providers/service';
 import { NewsListPayload, NewsListResponse, NewsDetailResponse, NewsDetailPayload } from '@/types/news';
-import axios from 'axios';
 
 export const fetchNews = async (params: NewsListPayload): Promise<NewsListResponse> => {
   try {

@@ -1,6 +1,7 @@
+import axios from 'axios';
+
 import { endpoint } from '@/providers/service';
 import { CourseCategoryResponse, CourseListPayload, CourseObjectResponse } from '@/types/course';
-import axios from 'axios';
 
 export const fetchCourse = async (params: CourseListPayload): Promise<CourseObjectResponse> => {
   try {

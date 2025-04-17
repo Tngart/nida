@@ -1,5 +1,3 @@
-import { ResponseDefault } from './default';
-
 export interface CourseData {
   allAccess: boolean;
   avgRating: number;

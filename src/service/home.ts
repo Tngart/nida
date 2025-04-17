@@ -1,7 +1,8 @@
+import axios from 'axios';
+
 import { endpoint } from '@/providers/service';
 import { ResponseDefault } from '@/types/default';
 import { HomeResponseObject } from '@/types/home';
-import axios from 'axios';
 
 export const fetchHome = async (): Promise<HomeResponseObject> => {
   try {

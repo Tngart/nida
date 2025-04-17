@@ -1,7 +1,8 @@
+import axios from 'axios';
+
 import { endpoint } from '@/providers/service';
 import { ResponseDefault } from '@/types/default';
 import { ForgotPasswordPayload, LoginPayload } from '@/types/user';
-import axios from 'axios';
 
 export const login = async (payload: LoginPayload): Promise<ResponseDefault<any>> => {
   try {

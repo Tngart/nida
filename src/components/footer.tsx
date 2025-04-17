@@ -52,7 +52,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="bg-primary-main mt-8 flex flex-col items-center justify-between border-t text-sm md:flex-row">
+      <div className="mt-8 flex flex-col items-center justify-between border-t bg-primary-main text-sm md:flex-row">
         <div className="flex w-full justify-between p-4">
           <Typography variant="body2" color="primary.contrastText">
             © 2021 Nida Online Learning. All Rights Reserved.

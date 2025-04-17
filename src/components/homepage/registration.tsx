@@ -6,7 +6,7 @@ import React from 'react';
 const Registration = () => {
   const t = useTranslations('Homepage.Registration');
   return (
-    <Box className="bg-primary-main flex h-[175px] w-full flex-col items-center justify-center gap-4 rounded-2xl">
+    <Box className="flex h-[175px] w-full flex-col items-center justify-center gap-4 rounded-2xl bg-primary-main">
       <Typography variant="h4" fontWeight={'bold'} color="primary.contrastText">
         {t('title')}
       </Typography>

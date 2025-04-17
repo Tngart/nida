@@ -7,7 +7,7 @@ export default function ErrorAlert({ message }: { message?: string | ReactNode }
   return (
     message && (
       <Alert className="w-full overflow-hidden" severity="error" variant="filled">
-        <div className="text-ellipsis overflow-hidden">{message}</div>
+        <div className="overflow-hidden text-ellipsis">{message}</div>
       </Alert>
     )
   );

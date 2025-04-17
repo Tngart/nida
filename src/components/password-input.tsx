@@ -1,16 +1,16 @@
-import VisibilityOff from "@mui/icons-material/VisibilityOffOutlined";
-import Visibility from "@mui/icons-material/VisibilityOutlined";
-import IconButton from "@mui/material/IconButton";
-import InputAdornment from "@mui/material/InputAdornment";
-import { TextFieldProps } from "@mui/material/TextField";
-import { useState } from "react";
-import { Control, FieldValues, Path } from "react-hook-form";
+import VisibilityOff from '@mui/icons-material/VisibilityOffOutlined';
+import Visibility from '@mui/icons-material/VisibilityOutlined';
+import IconButton from '@mui/material/IconButton';
+import InputAdornment from '@mui/material/InputAdornment';
+import { TextFieldProps } from '@mui/material/TextField';
+import { useState } from 'react';
+import { Control, FieldValues, Path } from 'react-hook-form';
 
-import Input from "./input";
+import Input from './input';
 
 export default function PasswordInput<T extends FieldValues>({
   ...props
-}: Omit<TextFieldProps, "name"> & {
+}: Omit<TextFieldProps, 'name'> & {
   control: Control;
   EndLabel?: React.ReactNode;
   helperTextHidden?: boolean;
@@ -38,8 +38,8 @@ export default function PasswordInput<T extends FieldValues>({
             ),
           },
         }}
-        placeholder={props.placeholder || "Password"}
-        type={showPassword ? "text" : "password"}
+        placeholder={props.placeholder || 'Password'}
+        type={showPassword ? 'text' : 'password'}
       />
     </div>
   );

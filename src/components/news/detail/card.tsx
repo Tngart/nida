@@ -43,7 +43,7 @@ const NewsCardComponent: FC<IProps> = ({ news, comments }) => {
             <Typography variant="subtitle1" fontWeight={'bold'}>
               {news.title}
             </Typography>
-            <div className="text-text-secondary flex flex-row gap-4">
+            <div className="flex flex-row gap-4 text-text-secondary">
               {Boolean(news.updateDate) && (
                 <Typography className="flex items-center">
                   <CalendarMonthOutlined className="mr-1" sx={{ fontSize: '12px' }} />

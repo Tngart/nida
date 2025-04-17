@@ -1,9 +1,9 @@
 // import EmailOutlined from "@mui/icons-material/EmailOutlined";
-import InputAdornment from "@mui/material/InputAdornment";
-import type { TextFieldProps } from "@mui/material/TextField";
-import type { Control, FieldValues, Path } from "react-hook-form";
+import InputAdornment from '@mui/material/InputAdornment';
+import type { TextFieldProps } from '@mui/material/TextField';
+import type { Control, FieldValues, Path } from 'react-hook-form';
 
-import Input from "./input";
+import Input from './input';
 
 export default function EmailInput<T extends FieldValues>({
   ...props
@@ -13,7 +13,7 @@ export default function EmailInput<T extends FieldValues>({
       {...props}
       fullWidth
       label={props.label}
-      placeholder={props.placeholder || "your@email.com"}
+      placeholder={props.placeholder || 'your@email.com'}
       autoComplete="email"
       type="email"
       slotProps={{
@@ -21,11 +21,7 @@ export default function EmailInput<T extends FieldValues>({
         inputLabel: { shrink: true },
         input: {
           ...props.slotProps?.input,
-          startAdornment: (
-            <InputAdornment position="start">
-              {/* <EmailOutlined fontSize="small" /> */}
-            </InputAdornment>
-          ),
+          startAdornment: <InputAdornment position="start">{/* <EmailOutlined fontSize="small" /> */}</InputAdornment>,
         },
       }}
     />

@@ -1,16 +1,16 @@
-import FormControl from "@mui/material/FormControl";
-import FormHelperText from "@mui/material/FormHelperText";
-import FormLabel from "@mui/material/FormLabel";
-import TextField, { TextFieldProps } from "@mui/material/TextField";
-import { Controller, FieldValues, FormProps, Path } from "react-hook-form";
+import FormControl from '@mui/material/FormControl';
+import FormHelperText from '@mui/material/FormHelperText';
+import FormLabel from '@mui/material/FormLabel';
+import TextField, { TextFieldProps } from '@mui/material/TextField';
+import { Controller, FieldValues, FormProps, Path } from 'react-hook-form';
 
 export default function Input<T extends FieldValues>({
   control,
   helperText,
   name,
   ...props
-}: Omit<TextFieldProps, "name"> &
-  Pick<FormProps<T>, "control"> & {
+}: Omit<TextFieldProps, 'name'> &
+  Pick<FormProps<T>, 'control'> & {
     helperTextHidden?: boolean;
     name?: Path<T>;
     EndLabel?: React.ReactNode;
@@ -19,10 +19,7 @@ export default function Input<T extends FieldValues>({
     <Controller
       control={control}
       name={name}
-      render={({
-        field: { ref, ...field },
-        fieldState: { error, isTouched },
-      }) => (
+      render={({ field: { ref, ...field }, fieldState: { error, isTouched } }) => (
         <UncontrolledInput
           {...props}
           {...field}
@@ -53,11 +50,11 @@ function UncontrolledInput({
       <FormControl fullWidth>
         <FormLabel
           sx={{
-            backgroundColor: "background.default",
-            padding: "0 6px",
+            backgroundColor: 'background.default',
+            padding: '0 6px',
             right: 0,
-            position: "absolute",
-            transform: "translate(10px, -12px) scale(0.75)",
+            position: 'absolute',
+            transform: 'translate(10px, -12px) scale(0.75)',
             zIndex: 100,
           }}
         >
@@ -69,10 +66,10 @@ function UncontrolledInput({
           error={error}
           fullWidth
           sx={(theme) => ({
-            "& .Mui-focused .MuiInputAdornment-root": {
+            '& .Mui-focused .MuiInputAdornment-root': {
               color: theme.palette.primary.main,
             },
-            "& .Mui-error .MuiInputAdornment-root": {
+            '& .Mui-error .MuiInputAdornment-root': {
               color: theme.palette.error.main,
             },
           })}

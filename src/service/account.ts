@@ -1,7 +1,8 @@
+import axios from 'axios';
+
 import { endpoint } from '@/providers/service';
 import { PositionResponseObject, RegisterPayload } from '@/types/account';
 import { ResponseDefault } from '@/types/default';
-import axios from 'axios';
 
 export const fetchPositions = async (): Promise<PositionResponseObject> => {
   try {
