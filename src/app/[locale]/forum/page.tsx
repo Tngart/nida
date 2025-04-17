@@ -1,7 +1,10 @@
+import dynamic from 'next/dynamic';
 import React from 'react';
 
-const Course = () => {
-  return <div>Course</div>;
+const ForumComponent = dynamic(() => import('@/components/forum'));
+
+const ForumPage = () => {
+  return <ForumComponent />;
 };
 
-export default Course;
+export default ForumPage;

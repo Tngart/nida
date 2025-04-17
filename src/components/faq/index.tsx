@@ -19,13 +19,8 @@ const FaqComponent: FC<IProps> = ({ faqClusters, faqQuestions }) => {
   const fetchQuestion = useCallback(
     async (id?: string) => {
       const params = { offset: 0, limit: 30 };
-      if (!id) {
-        const data = await fetchFaqData('-1', params);
-        setQuestions(data.questions);
-      } else {
-        const data = await fetchFaqData(id, params);
-        setQuestions(data.questions);
-      }
+      const data = await fetchFaqData(id || '-1', params);
+      setQuestions(data.questions);
     },
     [setQuestions, fetchFaqData]
   );

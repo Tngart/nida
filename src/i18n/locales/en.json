@@ -153,5 +153,12 @@
   },
   "FAQ": {
     "title": "FAQ"
+  },
+  "Forum": {
+    "title": "Forum",
+    "search": {
+      "box": "Search Forum",
+      "button": "Search"
+    }
   }
 }

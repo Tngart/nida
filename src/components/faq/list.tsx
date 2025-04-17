@@ -11,7 +11,7 @@ const FaqListConponent: FC<IProps> = ({ questions }) => {
     <div className="mx-10 flex flex-col gap-2 pb-10">
       {questions.map((question) => {
         return (
-          <Accordion>
+          <Accordion disableGutters>
             <AccordionSummary
               expandIcon={<ExpandMoreOutlined />}
               aria-controls={question.id.toString()}
