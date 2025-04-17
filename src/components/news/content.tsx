@@ -12,7 +12,7 @@ const NewsCardComponent = dynamic(() => import('./card'));
 
 const Content: FC<IProps> = ({ newsList }) => {
   return (
-    <div className="px-2 py-8 xl:px-72">
+    <div className="py-16">
       <Paper elevation={4} className="flex flex-col gap-4 p-4">
         {newsList.length ? newsList.map((news) => <NewsCardComponent key={news.id} data={news} />) : <Empty />}
       </Paper>

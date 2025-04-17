@@ -2,8 +2,8 @@ import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Nida',
-  description: 'Nida',
+  title: 'NIDA Learning Platform',
+  description: 'Nida environment school',
   icons: {
     apple: '/apple-touch-icon.png',
     icon: ['/icon.png'],

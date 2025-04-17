@@ -5,11 +5,11 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import CardActionArea from '@mui/material/CardActionArea';
-import { Course, News } from '@/types/home';
 import { Avatar, Box, Chip, Divider, Rating } from '@mui/material';
+import { CourseData } from '@/types/course';
 
 interface CourseProps {
-  data: Course;
+  data: CourseData;
 }
 const CourseCard: React.FC<CourseProps> = ({ data }) => {
   return (

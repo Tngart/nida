@@ -19,7 +19,7 @@ const CommentComponent: FC<IProps> = ({ comment }) => {
         </Paper>
       </div>
       {comment.reply.map((reply) => (
-        <div className="flex w-full flex-row gap-4 px-24">
+        <div key={reply.id} className="flex w-full flex-row gap-4 px-24">
           <Avatar src={reply.image} />
           <Paper className="flex w-1/2 flex-col gap-2 p-4" elevation={3}>
             <Typography variant="subtitle1" fontWeight={'bold'}>

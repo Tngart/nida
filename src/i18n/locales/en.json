@@ -16,6 +16,17 @@
       "faq": "FAQ"
     }
   },
+  "Course": {
+    "enroll": "Enroll",
+    "result": "Result: {total} item(s)",
+    "Search": {
+      "button": "Search",
+      "empty": "No filter selected",
+      "filter": "Filter",
+      "placeholder": "Search course",
+      "title": "Explore Course"
+    }
+  },
   "Empty": {
     "description": "Not found"
   },
@@ -41,7 +52,7 @@
     }
   },
   "News": {
-    "Filter": {
+    "Search": {
       "title": "News",
       "placeholder": "Search news",
       "button": "Search"

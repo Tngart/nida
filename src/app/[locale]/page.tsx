@@ -10,14 +10,14 @@ const RecommendComponent = dynamic(() => import('@/components/homepage/recommend
 const HomePage = async () => {
   const homeList = await fetchHome();
   return (
-    <div>
+    <>
       <MainComponent />
-      <div className="flex flex-col items-center justify-center gap-8 px-4 py-12 md:px-48">
+      <div className="flex flex-col items-center justify-center gap-8 py-12">
         <NewsComponent newsList={homeList.news} />
         <FreeRegistrationComponent />
       </div>
       <RecommendComponent courses={homeList.course} />
-    </div>
+    </>
   );
 };
 

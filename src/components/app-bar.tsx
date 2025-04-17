@@ -66,7 +66,7 @@ const CustomAppBar = () => {
       <Toolbar className="flex flex-row justify-between">
         <div className="flex flex-row items-center gap-4">
           <Box className="flex cursor-pointer flex-row items-center gap-4" onClick={() => router.push('/')}>
-            <Image src="/logo.png" alt="logo" width={140} height={140} />
+            <Image src="/logo.png" alt="logo" width={160} height={160} />
           </Box>
           {isLgSize ? (
             <>

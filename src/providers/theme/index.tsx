@@ -57,11 +57,11 @@ const muiTheme = createTheme({
           position: 'fixed',
           width: 'calc(100% - 2rem)',
           top: 30,
-          height: 48,
+          height: '55px',
           left: '50%',
           transform: 'translateX(-50%)',
           [theme.breakpoints.up('lg')]: {
-            width: 'calc(100% - 24rem)',
+            width: 'calc(100% - 16rem)',
           },
         }),
       },
@@ -271,9 +271,9 @@ const muiTheme = createTheme({
     MuiToolbar: {
       styleOverrides: {
         root: {
-          minHeight: '48px !important',
+          minHeight: '55px !important',
           '@media (min-width:600px)': {
-            minHeight: '48px !important',
+            minHeight: '55px !important',
           },
         },
       },

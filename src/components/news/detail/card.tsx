@@ -110,7 +110,7 @@ const NewsCardComponent: FC<IProps> = ({ news, comments }) => {
           </Button>
         </div>
         {comments.map((comment) => (
-          <CommentComponent comment={comment} />
+          <CommentComponent key={comment.id} comment={comment} />
         ))}
       </div>
     </Card>

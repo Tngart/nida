@@ -4,7 +4,7 @@ import { NewsData, NewsListPayload } from '@/types/news';
 import dynamic from 'next/dynamic';
 import React, { FC, useState } from 'react';
 
-const FilterComponent = dynamic(() => import('@/components/news/filter'));
+const SearchComponent = dynamic(() => import('@/components/news/search'));
 const ContentComponent = dynamic(() => import('@/components/news/content'));
 
 interface IProps {
@@ -18,7 +18,8 @@ const NewsComponent: FC<IProps> = ({ newsList }) => {
   };
   return (
     <>
-      <FilterComponent onSubmit={onSubmit} />
+      <div className="absolute left-1/2 top-0 z-0 h-[250px] w-screen -translate-x-1/2 bg-[#1d1d21] md:h-[200px]" />
+      <SearchComponent onSubmit={onSubmit} />
       <ContentComponent newsList={listData} />
     </>
   );

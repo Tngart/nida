@@ -7,7 +7,7 @@ export default function Footer() {
   const t = useTranslations('Footer');
   return (
     <div className="fixed-0 w-full">
-      <div className="flex flex-col items-start justify-between gap-6 px-4 pt-4 md:flex-row md:px-48">
+      <div className="flex flex-col items-start justify-between gap-6 px-4 pt-4 md:flex-row xl:px-48">
         <div className="text-start md:text-left">
           <Image src="/logo.png" alt="logo" width={150} height={150} />
           <Typography>{t('description')}</Typography>
