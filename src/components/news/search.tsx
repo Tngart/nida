@@ -1,10 +1,11 @@
 'use client';
 
-import { NewsListPayload } from '@/types/news';
 import { Search } from '@mui/icons-material';
 import { Button, TextField, Typography } from '@mui/material';
 import { useTranslations } from 'next-intl';
 import React, { FC, useState } from 'react';
+
+import { NewsListPayload } from '@/types/news';
 
 interface IProps {
   onSubmit: (payload: NewsListPayload) => void;

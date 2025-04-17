@@ -26,5 +26,5 @@ export interface RegisterPayload {
   password: string;
   tel: string;
   position: string;
-  userCode: any;
+  userCode: string;
 }

@@ -1,7 +1,7 @@
 'use client';
 
-import React from 'react';
-import { useRouter, useParams, usePathname } from 'next/navigation';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import MenuIcon from '@mui/icons-material/Menu';
 import {
   AppBar,
   Toolbar,
@@ -14,13 +14,13 @@ import {
   Divider,
   useMediaQuery,
 } from '@mui/material';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import MenuIcon from '@mui/icons-material/Menu';
 import 'flag-icons/css/flag-icons.min.css';
+import { useTheme } from '@mui/material/styles';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter, useParams, usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
-import { useTheme } from '@mui/material/styles';
+import React from 'react';
 
 const CustomAppBar = () => {
   const t = useTranslations('AppBar');

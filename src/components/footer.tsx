@@ -1,7 +1,7 @@
 import { Android, Apple } from '@mui/icons-material';
 import { Link, Typography } from '@mui/material';
-import { useTranslations } from 'next-intl';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 export default function Footer() {
   const t = useTranslations('Footer');
@@ -19,21 +19,13 @@ export default function Footer() {
           </Typography>
           <div className="flex flex-row gap-2">
             <Typography>{t('contact.email')}</Typography>
-            <Link underline="always" href="#">
-              gseda@nida.ac.th
-            </Link>
+            <Link underline="always">gseda@nida.ac.th</Link>
           </div>
           <div className="flex flex-row gap-2">
             <Typography>{t('contact.phone')}</Typography>
-            <Link underline="always" href="#">
-              02-727-3130
-            </Link>
-            <Link underline="always" href="#">
-              02-727-3291
-            </Link>
-            <Link underline="always" href="#">
-              082-782-9352
-            </Link>
+            <Link underline="always">02-727-3130</Link>
+            <Link underline="always">02-727-3291</Link>
+            <Link underline="always">082-782-9352</Link>
           </div>
         </div>
 
@@ -58,10 +50,10 @@ export default function Footer() {
             © 2021 Nida Online Learning. All Rights Reserved.
           </Typography>
           <div className="flex gap-4">
-            <Link underline="hover" href="#" color="primary.contrastText">
+            <Link underline="hover" color="primary.contrastText">
               Privacy Policy
             </Link>
-            <Link underline="hover" href="#" color="primary.contrastText">
+            <Link underline="hover" color="primary.contrastText">
               Terms Of Service
             </Link>
           </div>

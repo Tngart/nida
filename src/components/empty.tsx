@@ -1,7 +1,7 @@
-import React from 'react';
-import Image from 'next/image';
 import { Typography } from '@mui/material';
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import React from 'react';
 
 const Empty = () => {
   const t = useTranslations('Empty');

@@ -1,4 +1,3 @@
-import { forgotPassword } from '@/service/user';
 import { CancelRounded } from '@mui/icons-material';
 import { Button, Dialog, Grid, Typography } from '@mui/material';
 import dynamic from 'next/dynamic';
@@ -7,9 +6,11 @@ import { useRouter } from 'next/navigation';
 import { useCallback } from 'react';
 import { useForm, FieldValues } from 'react-hook-form';
 
+import { forgotPassword } from '@/service/user';
+
 const EmailInput = dynamic(() => import('@/components/email-input'));
 
-export default function ForgotPsswordFormDialog({
+export default function ForgotPasswordFormDialog({
   setErrorMessage,
   setSnackbarOpen,
 }: {
@@ -30,22 +31,25 @@ export default function ForgotPsswordFormDialog({
     validate: () => true,
   });
 
-  const onSubmit = useCallback(async ({ email }: FieldValues) => {
-    try {
-      const data = await forgotPassword({
-        username: email,
-      });
+  const onSubmit = useCallback(
+    async ({ email }: FieldValues) => {
+      try {
+        const data = await forgotPassword({
+          username: email,
+        });
 
-      if (data.code !== 200) {
-        setErrorMessage(data.message);
-      } else {
-        setErrorMessage(undefined);
+        if (data.code !== 200) {
+          setErrorMessage(data.message);
+        } else {
+          setErrorMessage(undefined);
+        }
+        setSnackbarOpen(true);
+      } catch (error) {
+        console.error(error);
       }
-      setSnackbarOpen(true);
-    } catch (error) {
-      console.error(error);
-    }
-  }, []);
+    },
+    [setErrorMessage, setSnackbarOpen]
+  );
 
   return (
     <Dialog

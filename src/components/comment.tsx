@@ -1,6 +1,7 @@
-import { CommentData } from '@/types/comment';
 import { Avatar, Paper, Typography } from '@mui/material';
 import React, { FC } from 'react';
+
+import { CommentData } from '@/types/comment';
 
 interface IProps {
   comment: CommentData;

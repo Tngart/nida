@@ -80,13 +80,6 @@ const muiTheme = createTheme({
         }),
       },
     },
-    MuiBackdrop: {
-      styleOverrides: {
-        root: {
-          backgroundColor: 'rgba(43,44,49,1)!important',
-        },
-      },
-    },
     MuiButton: {
       defaultProps: {
         disableElevation: true,
@@ -237,7 +230,7 @@ const muiTheme = createTheme({
     MuiListItemButton: { styleOverrides: { root: { borderRadius: '0.5rem' } } },
     MuiPaper: {
       styleOverrides: {
-        root: ({ theme }) => ({
+        root: () => ({
           borderRadius: '0.5rem',
         }),
       },

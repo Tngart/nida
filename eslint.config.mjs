@@ -145,7 +145,6 @@ export default [
       ],
 
       // Tailwind
-      'tailwindcss/no-custom-classname': 'warn',
       'tailwindcss/classnames-order': 'warn',
     },
   },

@@ -1,6 +1,7 @@
-import { fetchHome } from '@/service/home';
 import dynamic from 'next/dynamic';
 import React from 'react';
+
+import { fetchHome } from '@/service/home';
 
 const FreeRegistrationComponent = dynamic(() => import('@/components/homepage/registration'));
 const MainComponent = dynamic(() => import('@/components/homepage/main'));

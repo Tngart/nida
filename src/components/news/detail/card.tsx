@@ -1,5 +1,4 @@
 'use client';
-import { NewsData } from '@/types/news';
 import {
   AccessTimeOutlined,
   CalendarMonthOutlined,
@@ -10,11 +9,13 @@ import {
   VisibilityOutlined,
 } from '@mui/icons-material';
 import { Avatar, Button, Card, CardActions, CardMedia, Divider, Typography } from '@mui/material';
-import React, { FC } from 'react';
-import { useTranslations } from 'next-intl';
 import { alpha } from '@mui/material/styles';
-import { CommentData } from '@/types/comment';
 import dynamic from 'next/dynamic';
+import { useTranslations } from 'next-intl';
+import React, { FC } from 'react';
+
+import { CommentData } from '@/types/comment';
+import { NewsData } from '@/types/news';
 
 interface IProps {
   news: NewsData;

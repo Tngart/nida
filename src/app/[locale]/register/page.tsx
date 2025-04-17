@@ -1,4 +1,5 @@
 import { fetchPositions } from '@/service/account';
+
 import RegisterForm from './register-form';
 
 export default async function RegisterPage() {

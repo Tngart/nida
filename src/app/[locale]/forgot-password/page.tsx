@@ -3,7 +3,7 @@
 import dynamic from 'next/dynamic';
 import { useState } from 'react';
 
-const ForgotPsswordFormDialog = dynamic(() => import('@/components/forgot-password/dialog-form'));
+const ForgotPasswordFormDialog = dynamic(() => import('@/components/forgot-password/dialog-form'));
 const SnackbarAlert = dynamic(() => import('@/components/snackbar-alert'));
 
 export default function ForgotPasswordPage() {
@@ -12,7 +12,7 @@ export default function ForgotPasswordPage() {
 
   return (
     <div>
-      <ForgotPsswordFormDialog setErrorMessage={setErrorMessage} setSnackbarOpen={setSnackbarOpen} />
+      <ForgotPasswordFormDialog setErrorMessage={setErrorMessage} setSnackbarOpen={setSnackbarOpen} />
 
       <SnackbarAlert
         snackbarOpen={snackbarOpen}

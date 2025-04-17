@@ -1,7 +1,4 @@
-import { createTheme } from '@mui/material';
 import type { Config } from 'tailwindcss';
-
-const muiTheme = createTheme();
 
 const config: Config = {
   content: [

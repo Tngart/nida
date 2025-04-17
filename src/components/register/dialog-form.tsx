@@ -1,10 +1,13 @@
-import { Position } from '@/types/account';
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { CancelRounded } from '@mui/icons-material';
 import { Button, Dialog, DialogContent, DialogTitle, Grid, Typography } from '@mui/material';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { UseFormRegister, UseFormWatch, FieldValues, Control } from 'react-hook-form';
+
+import { Position } from '@/types/account';
 
 const Input = dynamic(() => import('@/components/input'));
 const PrefixSelect = dynamic(() => import('@/components/prefix-select'));
@@ -113,9 +116,11 @@ export default function RegistrationFormDialog({
               </Typography>
               <Grid className="flex flex-row gap-2">
                 <Typography variant="subtitle1">Already have an account?</Typography>
-                <Typography variant="subtitle1" color="primary" onClick={() => router.push('/login')}>
-                  Login
-                </Typography>
+                <Link href={'/login'}>
+                  <Typography variant="subtitle1" color="primary">
+                    Login
+                  </Typography>
+                </Link>
               </Grid>
             </Grid>
           </DialogTitle>

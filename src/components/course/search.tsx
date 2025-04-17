@@ -1,6 +1,5 @@
 'use client';
 
-import { Category, CourseListPayload } from '@/types/course';
 import { Search } from '@mui/icons-material';
 import {
   Button,
@@ -14,7 +13,9 @@ import {
   Typography,
 } from '@mui/material';
 import { useTranslations } from 'next-intl';
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useCallback, useEffect, useState } from 'react';
+
+import { Category, CourseListPayload } from '@/types/course';
 
 interface IProps {
   categories: Category[];
@@ -54,22 +55,24 @@ const SearchCourseComponent: FC<IProps> = ({ categories, onSubmit }) => {
     setFilters((prev) => prev.filter((item) => item !== id));
   };
 
-  const handleSubmit = (event?: React.FormEvent<HTMLFormElement>) => {
-    event?.preventDefault();
-    onSubmit({
-      keyword,
-      max: 10,
-      offset: 0,
-      orderBy,
-      orderType,
-      categoryIds: filters.join(','),
-    });
-  };
+  const handleSubmit = useCallback(
+    (event?: React.FormEvent<HTMLFormElement>) => {
+      event?.preventDefault();
+      onSubmit({
+        keyword,
+        max: 10,
+        offset: 0,
+        orderBy,
+        orderType,
+        categoryIds: filters.join(','),
+      });
+    },
+    [filters, keyword, onSubmit, orderBy, orderType]
+  );
 
-  // Trigger search when filters or sort changes
   useEffect(() => {
     handleSubmit();
-  }, [filters, sort]);
+  }, [filters, handleSubmit, sort]);
 
   return (
     <form onSubmit={handleSubmit}>

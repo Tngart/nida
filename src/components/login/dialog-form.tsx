@@ -1,4 +1,3 @@
-import { login } from '@/service/user';
 import { CancelRounded } from '@mui/icons-material';
 import { Button, Dialog, Grid, Typography } from '@mui/material';
 import dynamic from 'next/dynamic';
@@ -6,6 +5,8 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useCallback } from 'react';
 import { useForm, FieldValues } from 'react-hook-form';
+
+import { login } from '@/service/user';
 
 const EmailInput = dynamic(() => import('@/components/email-input'));
 const PasswordInput = dynamic(() => import('@/components/password-input'));
@@ -39,24 +40,27 @@ export default function LoginFormDialog({
     },
   });
 
-  const onSubmit = useCallback(async ({ email, password }: FieldValues) => {
-    try {
-      const data = await login({
-        username: email,
-        password,
-        valid: true,
-      });
+  const onSubmit = useCallback(
+    async ({ email, password }: FieldValues) => {
+      try {
+        const data = await login({
+          username: email,
+          password,
+          valid: true,
+        });
 
-      if (data.code !== 200) {
-        setErrorMessage(data.message);
-      } else {
-        setErrorMessage(undefined);
+        if (data.code !== 200) {
+          setErrorMessage(data.message);
+        } else {
+          setErrorMessage(undefined);
+        }
+        setSnackbarOpen(true);
+      } catch (error) {
+        console.error(error);
       }
-      setSnackbarOpen(true);
-    } catch (error) {
-      console.error(error);
-    }
-  }, []);
+    },
+    [setErrorMessage, setSnackbarOpen]
+  );
 
   return (
     <Dialog

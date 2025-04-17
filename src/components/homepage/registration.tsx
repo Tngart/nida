@@ -1,5 +1,5 @@
-import { ArrowForward, ArrowRightAlt } from '@mui/icons-material';
-import { Box, Button, Paper, Typography } from '@mui/material';
+import { ArrowForward } from '@mui/icons-material';
+import { Box, Button, Typography } from '@mui/material';
 import { useTranslations } from 'next-intl';
 import React from 'react';
 

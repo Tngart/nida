@@ -1,8 +1,9 @@
 'use client';
-import { fetchNews } from '@/service/news';
-import { NewsData, NewsListPayload } from '@/types/news';
 import dynamic from 'next/dynamic';
 import React, { FC, useState } from 'react';
+
+import { fetchNews } from '@/service/news';
+import { NewsData, NewsListPayload } from '@/types/news';
 
 const SearchComponent = dynamic(() => import('@/components/news/search'));
 const ContentComponent = dynamic(() => import('@/components/news/content'));

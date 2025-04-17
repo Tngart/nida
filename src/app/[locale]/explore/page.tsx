@@ -1,6 +1,7 @@
-import { fetchCourse, fetchCourseCategory } from '@/service/course';
 import dynamic from 'next/dynamic';
 import React from 'react';
+
+import { fetchCourse, fetchCourseCategory } from '@/service/course';
 
 const CourseComponent = dynamic(() => import('@/components/course'));
 

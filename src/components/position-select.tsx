@@ -1,7 +1,10 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useMemo } from 'react';
 import { Control } from 'react-hook-form';
-import Select from './select';
+
 import { Position } from '@/types/account';
+
+import Select from './select';
 
 export default function PositionSelect({
   control,
@@ -18,7 +21,7 @@ export default function PositionSelect({
         id: id.toString(),
         label: name,
       })),
-    []
+    [positions]
   );
 
   return <Select control={control} name={name} options={options} />;

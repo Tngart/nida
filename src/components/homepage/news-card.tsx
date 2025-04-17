@@ -1,12 +1,13 @@
 'use client';
-import * as React from 'react';
+import { Box, Chip } from '@mui/material';
 import Card from '@mui/material/Card';
+import CardActionArea from '@mui/material/CardActionArea';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import CardActionArea from '@mui/material/CardActionArea';
+import * as React from 'react';
+
 import { News } from '@/types/home';
-import { Box, Chip } from '@mui/material';
 
 interface NewsProps {
   data: News;

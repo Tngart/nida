@@ -1,10 +1,11 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import { FieldValues, useForm } from 'react-hook-form';
-import { Position, RegisterPayload } from '@/types/account';
-import { registerAccount } from '@/service/account';
 import { useCallback, useState } from 'react';
+import { FieldValues, useForm } from 'react-hook-form';
+
+import { registerAccount } from '@/service/account';
+import { Position, RegisterPayload } from '@/types/account';
 
 const RegistrationFormDialog = dynamic(() => import('@/components/register/dialog-form'));
 const RegistrationSuccessDialog = dynamic(() => import('@/components/register/dialog-success'));
@@ -51,7 +52,7 @@ export default function RegisterForm({ positionList }: { positionList: Position[
         console.error(error);
       }
     },
-    [registerAccount, setErrorMessage, setRegisterSuccess, setOpenNested, setSnackbarOpen]
+    [setErrorMessage, setRegisterSuccess, setOpenNested, setSnackbarOpen]
   );
 
   return (

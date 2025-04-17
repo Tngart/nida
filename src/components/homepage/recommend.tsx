@@ -1,15 +1,18 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
-import { FC, useRef, useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { Button, IconButton, LinearProgress, Typography } from '@mui/material';
 import { ArrowBack, ArrowForward } from '@mui/icons-material';
-import { Course } from '@/types/home';
-import CourseCard from '../course/card';
+import { Button, IconButton, LinearProgress, Typography } from '@mui/material';
 import { useTranslations } from 'next-intl';
+import { FC, useRef, useState } from 'react';
+import { Navigation } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import { Course } from '@/types/home';
+
+import CourseCard from '../course/card';
 
 interface IProps {
   courses: Course[];

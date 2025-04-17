@@ -1,6 +1,7 @@
-import { fetchNews } from '@/service/news';
 import dynamic from 'next/dynamic';
 import React from 'react';
+
+import { fetchNews } from '@/service/news';
 
 const NewsComponent = dynamic(() => import('@/components/news'));
 

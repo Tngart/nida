@@ -1,5 +1,3 @@
-/* eslint-disable tailwindcss/no-custom-classname */
-
 import { ArrowDropDown } from '@mui/icons-material';
 import Autocomplete from '@mui/material/Autocomplete';
 import Box from '@mui/material/Box';

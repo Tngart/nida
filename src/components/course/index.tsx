@@ -1,8 +1,9 @@
 'use client';
-import { fetchCourse } from '@/service/course';
-import { Category, CourseData, CourseListPayload } from '@/types/course';
 import dynamic from 'next/dynamic';
 import React, { FC, useState } from 'react';
+
+import { fetchCourse } from '@/service/course';
+import { Category, CourseData, CourseListPayload } from '@/types/course';
 
 const SearchComponent = dynamic(() => import('@/components/course/search'));
 const CardComponent = dynamic(() => import('@/components/course/card'));

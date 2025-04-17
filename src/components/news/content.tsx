@@ -1,7 +1,9 @@
-import { NewsData } from '@/types/news';
 import { Paper } from '@mui/material';
 import dynamic from 'next/dynamic';
 import React, { FC } from 'react';
+
+import { NewsData } from '@/types/news';
+
 import Empty from '../empty';
 
 interface IProps {

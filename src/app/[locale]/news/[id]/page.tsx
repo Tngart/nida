@@ -1,8 +1,9 @@
-import { fetchNewsDetail } from '@/service/news';
 import { ChevronLeft } from '@mui/icons-material';
 import { Button, Typography } from '@mui/material';
-import { getTranslations } from 'next-intl/server';
 import dynamic from 'next/dynamic';
+import { getTranslations } from 'next-intl/server';
+
+import { fetchNewsDetail } from '@/service/news';
 
 const NewsCardComponent = dynamic(() => import('@/components/news/detail/card'));
 
