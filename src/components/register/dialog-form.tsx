@@ -97,6 +97,11 @@ export default function RegistrationFormDialog({
             m: 2,
           },
         },
+        backdrop: {
+          sx: {
+            backgroundColor: 'rgba(43 ,44 ,49 ,1)',
+          },
+        },
       }}
     >
       <div className="flex flex-col lg:flex-row">
@@ -142,7 +147,7 @@ export default function RegistrationFormDialog({
           />
         </div>
         <Grid className="absolute right-4 top-4">
-          <Button onClick={() => router.push('/')}>
+          <Button onClick={() => router.back()}>
             <CancelRounded fontSize="large" />
           </Button>
         </Grid>
