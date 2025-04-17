@@ -15,8 +15,11 @@ export default async function NewsDetailPage({ params }: { params: { id: string 
   return (
     <>
       <div className="sticky left-0 right-0 top-0 z-50 w-screen -translate-x-32 bg-[#1d1d21] py-[55px]" />
-      <section className="relative">
-        <div className="absolute left-1/2 h-[600px] w-screen -translate-x-1/2 bg-[#1d1d21]" />
+      <section>
+        <div className="absolute inset-0 top-[110px] -z-10">
+          <div className="absolute inset-0 bg-gradient-to-b from-[#1d1d21] to-transparent" />
+          <img src="/course.png" alt="background" className="w-full object-cover" />
+        </div>
 
         <div className="relative flex flex-col gap-4">
           <Button variant="text" startIcon={<ChevronLeft />} sx={{ color: 'white', width: '100px' }} href="/news">

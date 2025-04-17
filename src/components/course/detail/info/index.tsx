@@ -19,8 +19,10 @@ const InfoComponent: FC<IProps> = ({ data }) => {
 
   return (
     <>
-      <div className="absolute left-1/2 top-0 -z-30 h-[665px] w-screen -translate-x-1/2 bg-[#1d1d21] md:h-[615px]" />
       <div className="h-[665px] md:h-[615px]">
+        <div className="absolute inset-0 -z-10">
+          <img src="/course.png" alt="background" className="w-full object-cover" />
+        </div>
         <div className="pt-[120px]">
           <Button startIcon={<ChevronLeft />} sx={{ color: 'white' }}>
             <Typography fontWeight={'bold'} variant="body1">

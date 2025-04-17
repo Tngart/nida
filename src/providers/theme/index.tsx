@@ -1,10 +1,13 @@
 'use client';
 import CssBaseline from '@mui/material/CssBaseline';
 import { createTheme, ThemeProvider as MuiThemeProvider, Palette, PaletteColor } from '@mui/material/styles';
-import { Noto_Sans_Thai } from 'next/font/google';
+import { Prompt } from 'next/font/google';
 import { useEffect, useState } from 'react';
 
-const notoSans = Noto_Sans_Thai({ subsets: ['latin', 'thai'] });
+const prompt = Prompt({
+  subsets: ['latin', 'thai'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+});
 const muiTheme = createTheme({
   cssVariables: {
     colorSchemeSelector: 'class',
@@ -299,9 +302,9 @@ const muiTheme = createTheme({
     },
   },
   typography: {
-    fontFamily: notoSans.style.fontFamily,
-    fontWeightBold: 700,
-    fontWeightMedium: 500,
+    fontFamily: prompt.style.fontFamily,
+    fontWeightBold: 600,
+    fontWeightMedium: 450,
     fontWeightRegular: 400,
     fontWeightLight: 300,
     h1: { fontSize: '6rem' },
