@@ -1,12 +1,14 @@
 import { Paper, Snackbar, Typography } from '@mui/material';
 
-export default function RegistrationAlert({
+export default function SnackkbarAlert({
   snackbarOpen,
   setSnackbarOpen,
+  successMessage,
   errorMessage,
 }: {
   snackbarOpen: boolean;
   setSnackbarOpen: (val: boolean) => void;
+  successMessage: string;
   errorMessage?: string;
 }) {
   return (
@@ -20,7 +22,7 @@ export default function RegistrationAlert({
     >
       <Paper className="w-[400px] p-4">
         <Typography variant="subtitle1">{errorMessage ? 'Warning' : 'Success'}</Typography>
-        <Typography variant="subtitle2">{errorMessage || 'Register Success'}</Typography>
+        <Typography variant="subtitle2">{errorMessage || successMessage}</Typography>
       </Paper>
     </Snackbar>
   );

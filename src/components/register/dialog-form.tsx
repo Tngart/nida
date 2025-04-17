@@ -105,13 +105,17 @@ export default function RegistrationFormDialog({
       }}
     >
       <div className="flex flex-col lg:flex-row">
-        <div className="flex flex-col p-4 lg:w-1/2 lg:justify-center">
+        <div className="flex flex-col p-4 px-20 lg:w-1/2 lg:justify-center">
           <DialogTitle className="flex flex-row justify-between">
             <Grid className="flex flex-col">
-              <Typography variant="h5">Register</Typography>
+              <Typography variant="h5" fontWeight="bold">
+                Register
+              </Typography>
               <Grid className="flex flex-row gap-2">
-                <Typography>already have account?</Typography>
-                <Typography color="primary">login</Typography>
+                <Typography variant="subtitle1">Already have an account?</Typography>
+                <Typography variant="subtitle1" color="primary" onClick={() => router.push('/login')}>
+                  Login
+                </Typography>
               </Grid>
             </Grid>
           </DialogTitle>
