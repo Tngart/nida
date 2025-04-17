@@ -19,6 +19,36 @@
   "Course": {
     "enroll": "ลงทะเบียน",
     "result": "ผลการค้นหา: {total} รายการ",
+    "Detail": {
+      "back": "ย้อนกลับ",
+      "review": "รีวิว",
+      "enroll": "ลงทะเบียน",
+      "detail": "โครงสร้างเนื้อหาหลักสูตร",
+      "Chapter": {
+        "chapter": "{count} บทเรียน",
+        "material": "{count} เนื้อหา"
+      },
+      "Class": {
+        "open": "เรียนคลาส",
+        "end": "จบคลาส",
+        "total": {
+          "title": "จํานวนชั่วโมง",
+          "description": "{hours} ชั่วโมง"
+        },
+        "certificate": {
+          "title": "ใบประกาศนียบัตร",
+          "description": "มีใบรับรองหลังเรียนจบ"
+        }
+      },
+      "Trainer": {
+        "main": "อาจารย์หลัก",
+        "support": "อาจารย์ร่วม",
+        "Button": {
+          "all": "ดูรายชื่อทั้งหมด",
+          "less": "ดูรายชื่อแบบย่อ"
+        }
+      }
+    },
     "Search": {
       "button": "ค้นหา",
       "filter": "ตัวกรอง",

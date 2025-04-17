@@ -29,7 +29,7 @@ const Main = () => {
         </Box>
       </div>
       <div
-        className="absolute right-0 top-0 z-0 h-[80svh] w-1/2 bg-primary-main"
+        className="absolute right-0 top-0 -z-30 h-[80svh] w-1/2 bg-primary-main"
         style={{
           clipPath: 'polygon(0 100%, 25% 0, 100% 0, 100% 100%)',
         }}

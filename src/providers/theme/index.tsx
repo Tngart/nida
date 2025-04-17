@@ -1,6 +1,6 @@
 'use client';
 import CssBaseline from '@mui/material/CssBaseline';
-import { createTheme, ThemeProvider as MuiThemeProvider } from '@mui/material/styles';
+import { createTheme, ThemeProvider as MuiThemeProvider, Palette, PaletteColor } from '@mui/material/styles';
 import { Noto_Sans_Thai } from 'next/font/google';
 import { useEffect, useState } from 'react';
 
@@ -40,7 +40,7 @@ const muiTheme = createTheme({
     },
     text: {
       primary: 'rgba(61, 61, 61, 1)',
-      secondary: 'rgba(0, 0, 0, 0.475)',
+      secondary: 'rgba(130, 130, 130, 1)',
       disabled: 'rgba(0, 0, 0, 0.38)',
     },
   },
@@ -99,6 +99,18 @@ const muiTheme = createTheme({
         root: {
           borderRadius: '0.75rem',
           backgroundColor: 'rgba(0, 0, 0, 0.5)',
+        },
+        filled: ({ ownerState, theme }) => {
+          const color = ownerState.color || 'primary';
+          const paletteColor = theme.palette[color as keyof Palette] as PaletteColor;
+
+          return paletteColor?.main
+            ? {
+                backgroundColor: paletteColor.main,
+                color: paletteColor.contrastText,
+                borderColor: paletteColor.main,
+              }
+            : {};
         },
       },
     },

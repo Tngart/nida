@@ -12,6 +12,7 @@ interface IProps {
   categories: Category[];
   courseList: CourseData[];
 }
+
 const CourseComponent: FC<IProps> = ({ categories, courseList }) => {
   const [listData, setListData] = useState<CourseData[]>(courseList);
   const onSubmit = async (payload: CourseListPayload) => {
@@ -20,7 +21,7 @@ const CourseComponent: FC<IProps> = ({ categories, courseList }) => {
   };
   return (
     <>
-      <div className="absolute left-1/2 top-0 z-0 h-[250px] w-screen -translate-x-1/2 bg-[#1d1d21] md:h-[200px]" />
+      <div className="absolute left-1/2 top-0 -z-30 h-[250px] w-screen -translate-x-1/2 bg-[#1d1d21] md:h-[200px]" />
       <SearchComponent categories={categories} onSubmit={onSubmit} />
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
         {listData.map((course) => (

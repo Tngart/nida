@@ -19,6 +19,36 @@
   "Course": {
     "enroll": "Enroll",
     "result": "Result: {total} item(s)",
+    "Detail": {
+      "back": "Back",
+      "review": "Review",
+      "enroll": "Enroll",
+      "Chapter": {
+        "title": "Course Detail",
+        "chapter": "{count} Chapter",
+        "material": "{count} Material"
+      },
+      "Class": {
+        "open": "Open Class",
+        "end": "End Class",
+        "total": {
+          "title": "Total hours",
+          "description": "{hours} Hours"
+        },
+        "certificate": {
+          "title": "E-Certificate",
+          "description": "certificate"
+        }
+      },
+      "Trainer": {
+        "main": "Main trainer",
+        "support": "Support trainer",
+        "Button": {
+          "all": "SEE ALL",
+          "less": "SEE LESS"
+        }
+      }
+    },
     "Search": {
       "button": "Search",
       "empty": "No filter selected",

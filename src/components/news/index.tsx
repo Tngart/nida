@@ -19,7 +19,7 @@ const NewsComponent: FC<IProps> = ({ newsList }) => {
   };
   return (
     <>
-      <div className="absolute left-1/2 top-0 z-0 h-[250px] w-screen -translate-x-1/2 bg-[#1d1d21] md:h-[200px]" />
+      <div className="absolute left-1/2 top-0 -z-30 h-[250px] w-screen -translate-x-1/2 bg-[#1d1d21] md:h-[200px]" />
       <SearchComponent onSubmit={onSubmit} />
       <ContentComponent newsList={listData} />
     </>

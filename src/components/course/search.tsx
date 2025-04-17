@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 'use client';
 
 import { Search } from '@mui/icons-material';
@@ -13,7 +14,7 @@ import {
   Typography,
 } from '@mui/material';
 import { useTranslations } from 'next-intl';
-import React, { FC, useCallback, useEffect, useState } from 'react';
+import React, { FC, useCallback, useEffect, useMemo, useState } from 'react';
 
 import { Category, CourseListPayload } from '@/types/course';
 
@@ -35,9 +36,7 @@ const SearchCourseComponent: FC<IProps> = ({ categories, onSubmit }) => {
   const [keyword, setKeyword] = useState<string>();
   const [filters, setFilters] = useState<string[]>([]);
   const [sort, setSort] = useState<string>('name_desc');
-
-  const orderBy = sort.split('_')[0];
-  const orderType = sort.split('_')[1];
+  const [orderBy, orderType] = useMemo(() => sort.split('_'), [sort]);
 
   const handleChangeSort = (event: SelectChangeEvent) => {
     const value = event.target.value;
@@ -72,7 +71,7 @@ const SearchCourseComponent: FC<IProps> = ({ categories, onSubmit }) => {
 
   useEffect(() => {
     handleSubmit();
-  }, [filters, handleSubmit, sort]);
+  }, [filters, sort]);
 
   return (
     <form onSubmit={handleSubmit}>

@@ -23,6 +23,7 @@ export interface CourseData {
   registerEndDate: string;
   registerStartDate: string;
   reviewCount: number;
+  supportTrainers?: Trainer[];
   trainer: Trainer;
 }
 
@@ -65,6 +66,11 @@ export interface CourseListPayload {
 
 export interface CourseObjectResponse {
   courses: CourseData[];
+  total: number;
+}
+
+export interface CourseObjectDetailResponse {
+  course: CourseData;
   total: number;
 }
 

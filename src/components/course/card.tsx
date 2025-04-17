@@ -14,7 +14,7 @@ interface CourseProps {
 }
 const CourseCard: React.FC<CourseProps> = ({ data }) => {
   return (
-    <CardActionArea>
+    <CardActionArea href={`/explore/${data.id}`}>
       <Card className="flex min-h-[320px] w-full flex-col">
         <Box className="flex h-full flex-col">
           <div>
