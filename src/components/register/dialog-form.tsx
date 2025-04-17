@@ -89,17 +89,12 @@ export default function RegistrationFormDialog({
     <Dialog
       open
       fullScreen
-      className="mx-auto py-2 lg:w-[1150px] lg:p-20"
+      className="mx-auto py-2 lg:w-[1150px]"
       slotProps={{
         paper: {
           sx: {
             borderRadius: 4,
             m: 2,
-          },
-        },
-        backdrop: {
-          sx: {
-            backgroundColor: 'rgba(0, 0, 0, 0.8)',
           },
         },
       }}
@@ -136,14 +131,14 @@ export default function RegistrationFormDialog({
             </Button>
           </DialogContent>
         </div>
-        <div className="w-full lg:w-1/2">
+        <div className="h-full w-full lg:w-1/2">
           <Image
             alt="register"
             src="/register-bg.svg"
             width={0}
             height={0}
             priority
-            style={{ height: 'auto', width: '100%' }}
+            className="h-full w-full object-cover lg:h-[97vh]"
           />
         </div>
         <Grid className="absolute right-4 top-4">

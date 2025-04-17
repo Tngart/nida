@@ -80,6 +80,13 @@ const muiTheme = createTheme({
         }),
       },
     },
+    MuiBackdrop: {
+      styleOverrides: {
+        root: {
+          backgroundColor: 'rgba(43,44,49,1)!important',
+        },
+      },
+    },
     MuiButton: {
       defaultProps: {
         disableElevation: true,
