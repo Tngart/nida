@@ -1,4 +1,4 @@
-import { login } from '@/service/user';
+import { forgotPassword } from '@/service/user';
 import { CancelRounded } from '@mui/icons-material';
 import { Button, Dialog, Grid, Typography } from '@mui/material';
 import dynamic from 'next/dynamic';
@@ -8,9 +8,8 @@ import { useCallback } from 'react';
 import { useForm, FieldValues } from 'react-hook-form';
 
 const EmailInput = dynamic(() => import('@/components/email-input'));
-const PasswordInput = dynamic(() => import('@/components/password-input'));
 
-export default function LoginFormDialog({
+export default function ForgotPsswordFormDialog({
   setErrorMessage,
   setSnackbarOpen,
 }: {
@@ -30,21 +29,11 @@ export default function LoginFormDialog({
     required: true,
     validate: () => true,
   });
-  const password = register('password', {
-    value: '',
-    required: { value: true, message: 'enter password' },
-    pattern: {
-      value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/,
-      message: 'Password must be contained with lower case, upper case and number',
-    },
-  });
 
-  const onSubmit = useCallback(async ({ email, password }: FieldValues) => {
+  const onSubmit = useCallback(async ({ email }: FieldValues) => {
     try {
-      const data = await login({
+      const data = await forgotPassword({
         username: email,
-        password,
-        valid: true,
       });
 
       if (data.code !== 200) {
@@ -81,27 +70,14 @@ export default function LoginFormDialog({
         <div className="flex flex-col gap-4 p-4 px-20 lg:w-1/2 lg:justify-center lg:p-20">
           <Grid className="flex flex-col gap-0">
             <Typography variant="h5" fontWeight="bold">
-              Login
+              Forget Password
             </Typography>
-            <Grid className="flex flex-row gap-2">
-              <Typography variant="subtitle1">Don't have an account yet?</Typography>
-              <Typography variant="subtitle1" color="primary" onClick={() => router.push('/register')}>
-                Register
-              </Typography>
-            </Grid>
+            <Typography variant="subtitle1">Enter the email to reset the password</Typography>
           </Grid>
-          <Grid className="flex flex-col gap-2">
-            <EmailInput control={control} name={email.name} placeholder="Username (E-mail)" />
-            <PasswordInput control={control} name={password.name} placeholder="Password" />
-          </Grid>
-          <Grid className="flex flex-col">
-            <Button variant="contained" disabled={!isValid} onClick={handleSubmit(onSubmit)}>
-              Login
-            </Button>
-            <Button variant="text" onClick={() => router.push('/forgot-password')}>
-              Forget Password??
-            </Button>
-          </Grid>
+          <EmailInput control={control} name={email.name} placeholder="Username (E-mail)" />
+          <Button variant="contained" disabled={!isValid} onClick={handleSubmit(onSubmit)}>
+            Send
+          </Button>
         </div>
         <div className="w-full lg:w-1/2">
           <Image

@@ -3,3 +3,7 @@ export interface LoginPayload {
   password: string;
   valid: boolean;
 }
+
+export interface ForgotPasswordPayload {
+  username: string;
+}
