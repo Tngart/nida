@@ -120,5 +120,8 @@
       "warning": "Warning",
       "Success": "Success"
     }
+  },
+  "FAQ": {
+    "title": "FAQ"
   }
 }
