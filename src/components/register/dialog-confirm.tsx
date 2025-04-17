@@ -1,4 +1,5 @@
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Divider } from '@mui/material';
+import { useTranslations } from 'next-intl';
 import { FieldValues } from 'react-hook-form';
 
 export default function ConfirmRegistrationDialog({
@@ -12,11 +13,13 @@ export default function ConfirmRegistrationDialog({
   handleSubmit: (onValid: (data: FieldValues) => void) => (e?: React.BaseSyntheticEvent) => void;
   onSubmit: (data: FieldValues) => void;
 }) {
+  const t = useTranslations('Register.confirm');
+
   return (
     <Dialog className="px-10 text-center" fullWidth open={openNested} onClose={() => setOpenNested(false)}>
-      <DialogTitle> Confirm Registration</DialogTitle>
+      <DialogTitle>{t('title')}</DialogTitle>
       <Divider />
-      <DialogContent>Confirm Processing</DialogContent>
+      <DialogContent>{t('subtitle')}</DialogContent>
       <DialogActions
         className="gap-4"
         sx={{
@@ -24,10 +27,10 @@ export default function ConfirmRegistrationDialog({
         }}
       >
         <Button variant="contained" onClick={() => setOpenNested(false)}>
-          Cancel
+          {t('cancel')}
         </Button>
         <Button variant="contained" onClick={handleSubmit(onSubmit)}>
-          Confirm
+          {t('confirm')}
         </Button>
       </DialogActions>
     </Dialog>

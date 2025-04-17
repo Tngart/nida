@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { CancelRounded } from '@mui/icons-material';
 import { Button, Dialog, DialogContent, DialogTitle, Grid, Typography } from '@mui/material';
+import { useTranslations } from 'next-intl';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -31,6 +32,7 @@ export default function RegistrationFormDialog({
   positionList: Position[];
   setOpenNested: (cal: boolean) => void;
 }) {
+  const t = useTranslations('Register');
   const router = useRouter();
 
   const prefix = register('prefix', {
@@ -100,11 +102,6 @@ export default function RegistrationFormDialog({
             m: 2,
           },
         },
-        backdrop: {
-          sx: {
-            backgroundColor: 'rgba(43 ,44 ,49 ,1)',
-          },
-        },
       }}
     >
       <div className="flex flex-col lg:flex-row">
@@ -112,13 +109,13 @@ export default function RegistrationFormDialog({
           <DialogTitle className="flex flex-row justify-between">
             <Grid className="flex flex-col">
               <Typography variant="h5" fontWeight="bold">
-                Register
+                {t('title')}
               </Typography>
               <Grid className="flex flex-row gap-2">
-                <Typography variant="subtitle1">Already have an account?</Typography>
+                <Typography variant="subtitle1">{t('subtitle')}</Typography>
                 <Link href={'/login'}>
                   <Typography variant="subtitle1" color="primary">
-                    Login
+                    {t('login')}
                   </Typography>
                 </Link>
               </Grid>
@@ -126,18 +123,23 @@ export default function RegistrationFormDialog({
           </DialogTitle>
           <DialogContent className="space-y-2">
             <PrefixSelect control={control} name={prefix.name} />
-            <Input control={control} name={firstname.name} placeholder={'First Name'} />
-            <Input control={control} name={lastname.name} placeholder={'Last Name'} />
+            <Input control={control} name={firstname.name} placeholder={t('form.firstName')} />
+            <Input control={control} name={lastname.name} placeholder={t('form.lastName')} />
             <PositionSelect control={control} name={position.name} positions={positionList} />
             {watch('position') && watch('position') !== '1' && (
-              <Input control={control} name={userCode.name} placeholder={'User Code'} />
+              <Input control={control} name={userCode.name} placeholder={t('userCode')} />
             )}
-            <EmailInput control={control} name={email.name} />
-            <PhoneNumberInput control={control} name={phone.name} />
-            <PasswordInput autoComplete="current-password" control={control} name={password.name} />
-            <PasswordInput control={control} name={confirmPassword.name} placeholder="Confirm Password" />
+            <EmailInput control={control} name={email.name} placeholder={t('form.email')} />
+            <PhoneNumberInput control={control} name={phone.name} placeholder={t('form.tel')} />
+            <PasswordInput
+              autoComplete="current-password"
+              control={control}
+              name={password.name}
+              placeholder={t('form.password')}
+            />
+            <PasswordInput control={control} name={confirmPassword.name} placeholder={t('form.confirmPassword')} />
             <Button fullWidth variant="contained" onClick={() => setOpenNested(true)} disabled={!isValid}>
-              <Typography>Register</Typography>
+              <Typography>{t('title')}</Typography>
             </Button>
           </DialogContent>
         </div>

@@ -71,5 +71,54 @@
       "phone": "Phone : "
     },
     "download": "Download"
+  },
+  "Register": {
+    "title": "Register",
+    "subtitle": "Already have an account?",
+    "login": "Login",
+    "form": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "userCode": "User Code",
+      "email": "your@email.com",
+      "tel": "0812345678",
+      "password": "Password",
+      "confirmPassword": "Confirm Password"
+    },
+    "confirm": {
+      "title": "Confirm Registration",
+      "subtitle": "Confirm Processing Registration",
+      "confirm": "Confirm",
+      "cancel": "Cancel"
+    },
+    "success": {
+      "title": "Register Success",
+      "subtitle": "Please check your email to validate your account",
+      "back": "Back to Login"
+    }
+  },
+  "Login": {
+    "title": "Login",
+    "subtitle": "Don't have an account yet?",
+    "register": "Register",
+    "form": {
+      "username": "Username(E-mail)",
+      "Password": "Password"
+    },
+    "forgot": "Forgot Password??"
+  },
+  "ForgotPassword": {
+    "title": "Forgot Password",
+    "subtitle": "Enter the email to reset the password",
+    "form": {
+      "username": "Username(E-mail)"
+    },
+    "send": "send"
+  },
+  "Alert": {
+    "snackbar": {
+      "warning": "Warning",
+      "Success": "Success"
+    }
   }
 }

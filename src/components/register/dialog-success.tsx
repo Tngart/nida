@@ -1,10 +1,12 @@
 import { CancelRounded } from '@mui/icons-material';
 import { Button, Dialog, Grid, Typography } from '@mui/material';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
 export default function RegistrationSuccessDialog() {
   const router = useRouter();
+  const t = useTranslations('Register.success');
 
   return (
     <Dialog
@@ -29,13 +31,15 @@ export default function RegistrationSuccessDialog() {
         <div className="flex flex-col gap-10 p-4 text-center lg:w-1/2 lg:justify-center">
           <Grid className="flex flex-row">
             <Grid className="flex w-full flex-col">
-              <Typography variant="h5">Register Success</Typography>
-              <Typography variant="subtitle1">Please check your email to validate your account</Typography>
+              <Typography variant="h5" fontWeight="bold">
+                {t('title')}
+              </Typography>
+              <Typography variant="subtitle1">{t('subtitle')}</Typography>
             </Grid>
           </Grid>
           <Grid>
             <Button className="w-full px-10" variant="contained">
-              Back to Login
+              {t('back')}
             </Button>
           </Grid>
         </div>

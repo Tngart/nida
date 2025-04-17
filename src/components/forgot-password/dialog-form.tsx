@@ -1,5 +1,6 @@
 import { CancelRounded } from '@mui/icons-material';
 import { Button, Dialog, Grid, Typography } from '@mui/material';
+import { useTranslations } from 'next-intl';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
@@ -18,6 +19,7 @@ export default function ForgotPasswordFormDialog({
   setSnackbarOpen: (val: boolean) => void;
 }) {
   const router = useRouter();
+  const t = useTranslations('ForgotPassword');
 
   const {
     control,
@@ -74,13 +76,13 @@ export default function ForgotPasswordFormDialog({
         <div className="flex flex-col gap-4 p-4 px-20 lg:w-1/2 lg:justify-center lg:p-20">
           <Grid className="flex flex-col gap-0">
             <Typography variant="h5" fontWeight="bold">
-              Forget Password
+              {t('title')}
             </Typography>
-            <Typography variant="subtitle1">Enter the email to reset the password</Typography>
+            <Typography variant="subtitle1">{t('subtitle')}</Typography>
           </Grid>
-          <EmailInput control={control} name={email.name} placeholder="Username (E-mail)" />
+          <EmailInput control={control} name={email.name} placeholder={t('form.username')} />
           <Button variant="contained" disabled={!isValid} onClick={handleSubmit(onSubmit)}>
-            Send
+            {t('send')}
           </Button>
         </div>
         <div className="w-full lg:w-1/2">

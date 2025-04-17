@@ -1,5 +1,6 @@
 import { CancelRounded } from '@mui/icons-material';
 import { Button, Dialog, Grid, Typography } from '@mui/material';
+import { useTranslations } from 'next-intl';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
@@ -19,6 +20,7 @@ export default function LoginFormDialog({
   setSnackbarOpen: (val: boolean) => void;
 }) {
   const router = useRouter();
+  const t = useTranslations('Login');
 
   const {
     control,
@@ -85,25 +87,25 @@ export default function LoginFormDialog({
         <div className="flex flex-col gap-4 p-4 px-20 lg:w-1/2 lg:justify-center lg:p-20">
           <Grid className="flex flex-col gap-0">
             <Typography variant="h5" fontWeight="bold">
-              Login
+              {t('title')}
             </Typography>
             <Grid className="flex flex-row gap-2">
-              <Typography variant="subtitle1">Don't have an account yet?</Typography>
+              <Typography variant="subtitle1">{t('subtitle')}</Typography>
               <Typography variant="subtitle1" color="primary" onClick={() => router.push('/register')}>
-                Register
+                {t('register')}
               </Typography>
             </Grid>
           </Grid>
           <Grid className="flex flex-col gap-2">
-            <EmailInput control={control} name={email.name} placeholder="Username (E-mail)" />
-            <PasswordInput control={control} name={password.name} placeholder="Password" />
+            <EmailInput control={control} name={email.name} placeholder={t('form.username')} />
+            <PasswordInput control={control} name={password.name} placeholder={t('form.password')} />
           </Grid>
           <Grid className="flex flex-col">
             <Button variant="contained" disabled={!isValid} onClick={handleSubmit(onSubmit)}>
-              Login
+              {t('title')}
             </Button>
             <Button variant="text" onClick={() => router.push('/forgot-password')}>
-              Forget Password??
+              {t('forgot')}
             </Button>
           </Grid>
         </div>
